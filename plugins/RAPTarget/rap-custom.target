@@ -3,7 +3,7 @@
 <locations>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.rap.sdk.feature.feature.group" version="3.1.0.20160527-1719"/>
-<unit id="org.eclipse.rap.equinox.target.feature.feature.group" version="3.1.0.20160527-1553"/>
+<unit id="org.eclipse.rap.equinox.target.feature.feature.group" version="3.1.0.20160607-1200"/>
 <unit id="org.eclipse.rap.feature.feature.group" version="3.1.0.20160527-1719"/>
 <unit id="org.eclipse.rap.examples.feature.feature.group" version="3.1.0.20160422-0843"/>
 <repository location="http://download.eclipse.org/rt/rap/3.1/"/>

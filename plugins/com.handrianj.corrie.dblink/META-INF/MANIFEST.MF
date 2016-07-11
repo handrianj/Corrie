@@ -1,12 +1,12 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Dblink
-Bundle-SymbolicName: com.capsa.corrie.dblink
+Bundle-SymbolicName: com.handrianj.corrie.dblink
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.handrianj.corrie.dblink.Activator
 Bundle-Vendor: CAPSA
 Require-Bundle: org.eclipse.core.runtime,
- com.capsa.corrie.languageManager
+ com.handrianj.corrie.languageManager
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: com.handrianj.corrie.dblink.model,

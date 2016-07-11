@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Hermes
-Bundle-SymbolicName: com.capsa.corrie.hermes
+Bundle-SymbolicName: com.handrianj.corrie.hermes
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.handrianj.corrie.hermes.Activator
 Bundle-Vendor: CAPSA
@@ -18,5 +18,4 @@ Bundle-ClassPath: lib/poi-3.13-20150929.jar,
  lib/poi-ooxml-3.13-20150929.jar,
  lib/poi-ooxml-schemas-3.13-20150929.jar,
  lib/poi-scratchpad-3.13-20150929.jar,
- lib/xmlbeans-2.6.0.jar,
  .

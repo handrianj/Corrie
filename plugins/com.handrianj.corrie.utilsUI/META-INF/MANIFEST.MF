@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: UtilsUI
-Bundle-SymbolicName: com.capsa.corrie.utilsUI
+Bundle-SymbolicName: com.handrianj.corrie.utilsUI
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.handrianj.corrie.utilsui.Activator
 Bundle-Vendor: CAPSA

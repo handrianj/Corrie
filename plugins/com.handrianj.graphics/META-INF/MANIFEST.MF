@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Graphics
-Bundle-SymbolicName: com.capsa.corrie.graphics
+Bundle-SymbolicName: com.handrianj.corrie.graphics
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.handrianj.corrie.graphics.Activator
 Bundle-Vendor: CAPSA

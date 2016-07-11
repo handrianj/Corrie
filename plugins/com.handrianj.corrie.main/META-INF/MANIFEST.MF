@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Main
-Bundle-SymbolicName: com.capsa.corrie.main;singleton:=true
+Bundle-SymbolicName: com.handrianj.corrie.main;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.handrianj.corrie.main.Activator
 Bundle-Vendor: CAPSA
@@ -9,16 +9,16 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.rap.ui;bundle-version="[2.0.0,4.0.0)",
  org.eclipse.osgi,
- com.capsa.corrie.viewsmanager,
- com.capsa.corrie.editors.util,
- com.capsa.corrie.editorPilotService,
- com.capsa.corrie.languageManager,
- com.capsa.corrie.sessionmanager,
- com.capsa.corrie.serviceregistry,
- com.capsa.corrie.utilsUI.dialog,
- com.capsa.corrie.picregistry,
- com.capsa.corrie.dblink,
- com.capsa.corrie.applicationManagerService
+ com.handrianj.corrie.viewsmanager,
+ com.handrianj.corrie.editors.util,
+ com.handrianj.corrie.editorPilotService,
+ com.handrianj.corrie.languageManager,
+ com.handrianj.corrie.sessionmanager,
+ com.handrianj.corrie.serviceregistry,
+ com.handrianj.corrie.utilsUI.dialog,
+ com.handrianj.corrie.picregistry,
+ com.handrianj.corrie.dblink,
+ com.handrianj.corrie.applicationManagerService
 Export-Package: com.handrianj.corrie.main;
   uses:="org.osgi.framework,
    org.eclipse.ui,

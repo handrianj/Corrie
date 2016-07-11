@@ -1,18 +1,18 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Dialog
-Bundle-SymbolicName: com.capsa.corrie.utilsUI.dialog;singleton:=true
+Bundle-SymbolicName: com.handrianj.corrie.utilsUI.dialog;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.handrianj.corrie.utilsui.dialog.Activator
 Bundle-Vendor: CAPSA
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.rap.ui.workbench,
- com.capsa.corrie.languageManager,
+ com.handrianj.corrie.languageManager,
  org.eclipse.rap.jface,
- com.capsa.corrie.sessionmanager,
- com.capsa.corrie.serviceregistry,
- com.capsa.corrie.dblink,
- com.capsa.corrie.applicationManagerService
+ com.handrianj.corrie.sessionmanager,
+ com.handrianj.corrie.serviceregistry,
+ com.handrianj.corrie.dblink,
+ com.handrianj.corrie.applicationManagerService
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: com.handrianj.corrie.utilsui.dialog.action,

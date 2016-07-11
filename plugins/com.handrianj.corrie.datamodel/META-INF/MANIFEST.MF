@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Datamodel
-Bundle-SymbolicName: com.capsa.corrie.datamodel
+Bundle-SymbolicName: com.handrianj.corrie.datamodel
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.handrianj.corrie.datamodel.Activator
 Bundle-Vendor: CAPSA

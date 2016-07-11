@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Viewsmanager
-Bundle-SymbolicName: com.capsa.corrie.viewsmanager;singleton:=true
+Bundle-SymbolicName: com.handrianj.corrie.viewsmanager;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.handrianj.corrie.viewsmanager.Activator
 Bundle-Vendor: CAPSA

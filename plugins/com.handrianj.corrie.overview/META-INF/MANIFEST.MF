@@ -1,20 +1,20 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Overview
-Bundle-SymbolicName: com.capsa.corrie.overview;singleton:=true
+Bundle-SymbolicName: com.handrianj.corrie.overview;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.handrianj.corrie.overview.Activator
 Bundle-Vendor: CAPSA
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.rap.ui,
  org.eclipse.rap.ui.views,
- com.capsa.corrie.viewsmanager,
- com.capsa.corrie.editors.util,
- com.capsa.corrie.languageManager,
- com.capsa.corrie.serviceregistry,
- com.capsa.corrie.dblink,
- com.capsa.corrie.datamodel,
- com.capsa.corrie.picregistry;bundle-version="1.0.0"
+ com.handrianj.corrie.viewsmanager,
+ com.handrianj.corrie.editors.util,
+ com.handrianj.corrie.languageManager,
+ com.handrianj.corrie.serviceregistry,
+ com.handrianj.corrie.dblink,
+ com.handrianj.corrie.datamodel,
+ com.handrianj.corrie.picregistry;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: com.handrianj.corrie.overview.lang

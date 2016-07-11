@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Picregistry
-Bundle-SymbolicName: com.capsa.corrie.picregistry;singleton:=true
+Bundle-SymbolicName: com.handrianj.corrie.picregistry;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.handrianj.corrie.picregistry.Activator
 Bundle-Vendor: CAPSA
