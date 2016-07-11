@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="com.capsa.corrie.main.defaultLaunch" name="com.capsa.corrie.main.defaultLaunch" schema="schema/com.capsa.corrie.main.defaultLaunch.exsd"/>
+
+   <extension
+         id="capsa.corrie.entrypoints"
+         point="org.eclipse.rap.ui.entrypoint">
+      <entrypoint
+            applicationId="com.capsa.corrie.main"
+            brandingId="unic.branding"
+            id="corrie.entrypoint"
+            path="/">
+      </entrypoint>
+   </extension>
+   <extension
+         id="com.capsa.corrie.main"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            cardinality="singleton-global"
+            thread="main"
+            visible="true">
+         <run
+               class="com.handrianj.corrie.main.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.rap.ui.branding">
+      <branding
+            id="unic.branding"
+            title="UNIC">
+         <presentationFactory
+               defaultLayoutId="org.eclipse.rap.design.example.business.layout"
+               id="org.eclipse.ui.presentations.default"
+               name="BusinessPresentationFactory"
+               viewActionsVisible="false">
+         </presentationFactory>
+      </branding>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="com.handrianj.corrie.main.InitPerpective"
+            id="com.capsa.corrie.main.InitPerpective"
+            name="%perspective.name">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="com.capsa.unic.actions"
+            name="Actions">
+      </category>
+   </extension>
+   <extension
+         point="com.capsa.corrie.languagemanager.defaults">
+      <DefaultLanguage
+            LanguageProviderClass="com.handrianj.corrie.main.lang.MainLang">
+      </DefaultLanguage>
+   </extension>
+
+</plugin>

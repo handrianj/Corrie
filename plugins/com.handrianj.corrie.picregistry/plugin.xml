@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="com.capsa.corrie.picregistry.preload" name="com.capsa.corrie.picregistry.preload" schema="schema/com.capsa.corrie.preload.exsd"/>
+   <extension
+         point="com.capsa.corrie.picregistry.preload">
+      <PluginID
+            PluginID="com.capsa.corrie.picregistry">
+         <Folder
+               Folder="icons">
+            <PreloadedPicture
+                  CanBeDisabled="false"
+                  Extension=".png"
+                  NumberOfVersions="1"
+                  PictureName="nopic">
+            </PreloadedPicture>
+         </Folder>
+      </PluginID>
+   </extension>
+
+</plugin>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="com.capsa.corrie.viewsManager.capsaView" name="com.capsa.corrie.viewsManager.capsaView" schema="schema/com.capsa.corrie.viewsManager.capsaView.exsd"/>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="com.handrianj.corrie.viewsmanager.perspectives.DefaultEmptyPerspective"
+            id="com.capsa.corrie.viewsmanager.perspectives.DefaultEmptyPerspective"
+            name="Default Empty">
+      </perspective>
+      <perspective
+            class="com.handrianj.corrie.viewsmanager.perspectives.DefaultMenuPerspective"
+            id="com.capsa.corrie.viewsmanager.perspectives.DefaultMenuPerspective"
+            name="Default Menu">
+      </perspective>
+   </extension>
+
+</plugin>

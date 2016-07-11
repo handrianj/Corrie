@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Picregistry
+Bundle-SymbolicName: com.capsa.corrie.picregistry;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.handrianj.corrie.picregistry.Activator
+Bundle-Vendor: CAPSA
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.rap.ui.workbench,
+ org.eclipse.rap.jface
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Service-Component: OSGI/picRegistry.xml
+Export-Package: com.handrianj.corrie.picregistry.service

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="com.capsa.corrie.overview.menuItem" name="com.capsa.corrie.overview.menuItem" schema="schema/com.capsa.corrie.overview.menuItem.exsd"/>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="false"
+            class="com.handrianj.corrie.overview.ui.Overview"
+            id="com.capsa.corrie.overview.ui.overview"
+            name="Overview"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="com.capsa.corrie.viewsmanager.perspectives.DefaultMenuPerspective">
+         <view
+               closeable="false"
+               id="com.capsa.corrie.overview.ui.overview"
+               minimized="false"
+               moveable="false"
+               ratio="0.1"
+               relationship="left"
+               relative="org.eclipse.ui.editorss"
+               showTitle="false"
+               standalone="true"
+               visible="true">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="com.capsa.corrie.viewsManager.capsaView">
+      <CapsaView
+            PerspectiveID="com.capsa.corrie.viewsmanager.perspectives.DefaultMenuPerspective"
+            ViewID="com.capsa.corrie.overview.ui.overview">
+      </CapsaView>
+   </extension>
+   <extension
+         point="com.capsa.corrie.languagemanager.defaults">
+      <DefaultLanguage
+            LanguageProviderClass="com.handrianj.corrie.overview.lang.OverviewLang">
+      </DefaultLanguage>
+   </extension>
+
+</plugin>

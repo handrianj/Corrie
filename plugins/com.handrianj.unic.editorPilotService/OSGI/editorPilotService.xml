@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="com.capsa.unic.editorPilotService.impl">
+   <implementation class="com.capsa.unic.editorpilotservice.impl.internal.EditorPilotService"/>
+   <service>
+      <provide interface="com.capsa.unic.editors.util.editors.IEditorPilotService"/>
+   </service>
+</scr:component>
