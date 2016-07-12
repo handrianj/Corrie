@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-   <extension-point id="com.capsa.corrie.overview.menuItem" name="com.capsa.corrie.overview.menuItem" schema="schema/com.capsa.corrie.overview.menuItem.exsd"/>
+   <extension-point id="com.handrianj.corrie.overview.menuItem" name="com.handrianj.corrie.overview.menuItem" schema="schema/com.handrianj.corrie.overview.menuItem.exsd"/>
    <extension
          point="org.eclipse.ui.views">
       <view
@@ -31,14 +31,14 @@
       </perspectiveExtension>
    </extension>
    <extension
-         point="com.capsa.corrie.viewsManager.capsaView">
-      <CapsaView
+         point="com.handrianj.corrie.viewsManager.view">
+      <view
             PerspectiveID="com.capsa.corrie.viewsmanager.perspectives.DefaultMenuPerspective"
             ViewID="com.capsa.corrie.overview.ui.overview">
-      </CapsaView>
+      </view>
    </extension>
    <extension
-         point="com.capsa.corrie.languagemanager.defaults">
+         point="com.handrianj.corrie.languagemanager.defaults">
       <DefaultLanguage
             LanguageProviderClass="com.handrianj.corrie.overview.lang.OverviewLang">
       </DefaultLanguage>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-   <extension-point id="com.capsa.corrie.main.defaultLaunch" name="com.capsa.corrie.main.defaultLaunch" schema="schema/com.capsa.corrie.main.defaultLaunch.exsd"/>
+   <extension-point id="com.handrianj.corrie.main.defaultLaunch" name="com.handrianj.corrie.main.defaultLaunch" schema="schema/com.handrianj.corrie.main.defaultLaunch.exsd"/>
 
    <extension
          id="capsa.corrie.entrypoints"
@@ -26,35 +26,22 @@
       </application>
    </extension>
    <extension
-         point="org.eclipse.rap.ui.branding">
-      <branding
-            id="unic.branding"
-            title="UNIC">
-         <presentationFactory
-               defaultLayoutId="org.eclipse.rap.design.example.business.layout"
-               id="org.eclipse.ui.presentations.default"
-               name="BusinessPresentationFactory"
-               viewActionsVisible="false">
-         </presentationFactory>
-      </branding>
-   </extension>
-   <extension
          point="org.eclipse.ui.perspectives">
       <perspective
             class="com.handrianj.corrie.main.InitPerpective"
-            id="com.capsa.corrie.main.InitPerpective"
+            id="com.handrianj.corrie.main.InitPerpective"
             name="%perspective.name">
       </perspective>
    </extension>
    <extension
          point="org.eclipse.ui.commands">
       <category
-            id="com.capsa.unic.actions"
+            id="com.handrianj.unic.actions"
             name="Actions">
       </category>
    </extension>
    <extension
-         point="com.capsa.corrie.languagemanager.defaults">
+         point="com.handrianj.corrie.languagemanager.defaults">
       <DefaultLanguage
             LanguageProviderClass="com.handrianj.corrie.main.lang.MainLang">
       </DefaultLanguage>

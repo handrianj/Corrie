@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-   <extension-point id="com.capsa.corrie.viewsManager.capsaView" name="com.capsa.corrie.viewsManager.capsaView" schema="schema/com.capsa.corrie.viewsManager.capsaView.exsd"/>
+   <extension-point id="com.handrianj.corrie.viewsManager.view" name="com.handrianj.corrie.viewsManager.view" schema="schema/com.handrianj.corrie.viewsManager.capsaView.exsd"/>
    <extension
          point="org.eclipse.ui.perspectives">
       <perspective

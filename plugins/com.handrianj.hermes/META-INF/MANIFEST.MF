@@ -9,9 +9,10 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.rap.ui.workbench
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
-Export-Package: com.handrianj.corrie.hermes.datamodel,
- com.handrianj.corrie.hermes.parser,
- org.apache.poi.ss.usermodel
+Export-Package: com.handrianj.corrie.hermes;uses:="org.osgi.framework,org.eclipse.ui.plugin",
+ com.handrianj.corrie.hermes.datamodel,
+ com.handrianj.corrie.hermes.parser;uses:="com.handrianj.corrie.hermes.datamodel",
+ org.apache.poi.ss.usermodel;uses:="org.apache.poi.openxml4j.opc,org.apache.poi.poifs.filesystem"
 Bundle-ClassPath: lib/poi-3.13-20150929.jar,
  lib/poi-examples-3.13-20150929.jar,
  lib/poi-excelant-3.13-20150929.jar,

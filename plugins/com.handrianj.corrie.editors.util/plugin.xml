@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-   <extension-point id="com.capsa.corrie.editors.util.inputs" name="com.capsa.corrie.editors.util.inputs" schema="schema/com.capsa.corrie.editors.util.inputs.exsd"/>
+   <extension-point id="com.handrianj.corrie.editors.util.inputs" name="com.handrianj.corrie.editors.util.inputs" schema="schema/com.handrianj.corrie.editors.util.inputs.exsd"/>
 
 </plugin>

@@ -1,10 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Util
+Bundle-Name: Editor Utils
 Bundle-SymbolicName: com.handrianj.corrie.editors.util;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: com.handrianj.corrie.editors.util.Activator
-Bundle-Vendor: CAPSA
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.rap.ui.workbench;visibility:=reexport,
  org.eclipse.rap.jface;visibility:=reexport,

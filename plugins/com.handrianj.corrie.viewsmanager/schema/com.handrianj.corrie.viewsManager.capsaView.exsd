@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Schema file written by PDE -->
-<schema targetNamespace="com.capsa.corrie.editors.util" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="com.capsa.corrie.viewsmanager" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="com.capsa.corrie.editors.util" id="com.capsa.corrie.editors.util.inputs" name="com.capsa.corrie.editors.util.inputs"/>
+         <meta.schema plugin="com.capsa.corrie.viewsmanager" id="com.capsa.corrie.viewsManager.view" name="com.capsa.corrie.viewsManager.view"/>
       </appinfo>
       <documentation>
-         Extension point used to define the editor input of an editor
+         Extension point used to setup view data (which view should be open with which perspective)
       </documentation>
    </annotation>
 
@@ -18,7 +18,7 @@
       </annotation>
       <complexType>
          <choice minOccurs="1" maxOccurs="unbounded">
-            <element ref="input"/>
+            <element ref="view"/>
          </choice>
          <attribute name="point" type="string" use="required">
             <annotation>
@@ -47,25 +47,25 @@
       </complexType>
    </element>
 
-   <element name="input">
+   <element name="view">
       <complexType>
-         <attribute name="EditorID" type="string" use="required">
+         <attribute name="ViewID" type="string" use="required">
             <annotation>
                <documentation>
-                  The ID of the Editor that will use the input
+                  
                </documentation>
                <appinfo>
-                  <meta.attribute kind="identifier" basedOn="org.eclipse.ui.editors/editor/@id"/>
+                  <meta.attribute kind="identifier" basedOn="org.eclipse.ui.views/view/@id"/>
                </appinfo>
             </annotation>
          </attribute>
-         <attribute name="InputFactory" type="string" use="required">
+         <attribute name="PerspectiveID" type="string" use="default" value="com.capsa.corrie.viewsmanager.perspectives.DefaultEmptyPerspective">
             <annotation>
                <documentation>
-                  Class for the input factory
+                  
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn=":com.capsa.unic.editors.util.factories.IEditorObjectInputFactory"/>
+                  <meta.attribute kind="identifier" basedOn="org.eclipse.ui.perspectives/perspective/@id"/>
                </appinfo>
             </annotation>
          </attribute>
