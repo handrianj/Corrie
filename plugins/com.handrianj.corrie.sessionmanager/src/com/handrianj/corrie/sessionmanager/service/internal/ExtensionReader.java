@@ -14,7 +14,7 @@ import com.handrianj.corrie.sessionmanager.service.ISessionManagerDelegate;
 
 public class ExtensionReader {
 
-	private static final String EXTENSION_POINT = "com.capsa.corrie.sessionmanager.sessiondelegate";
+	private static final String EXTENSION_POINT = "com.handrianj.corrie.sessionmanager.sessiondelegate";
 
 	private static final String ATTRIB_DELEGATE_CLASS = "Delegate";
 

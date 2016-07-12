@@ -30,6 +30,7 @@ public abstract class AbstractLanguageDataProvider implements ILanguageDataProvi
 
 			Map<String, String> textMapForLang = getTextMapForLang(currentLanguage.getId());
 
+			// If text was found
 			if ((textMapForLang != null) && !textMapForLang.isEmpty()) {
 				languageMap.put(currentLanguage, textMapForLang);
 			}

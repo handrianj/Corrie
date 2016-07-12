@@ -35,7 +35,7 @@
    <extension
          point="org.eclipse.ui.commands">
       <category
-            id="com.handrianj.unic.actions"
+            id="com.handrianj.corrie.actions"
             name="Actions">
       </category>
    </extension>

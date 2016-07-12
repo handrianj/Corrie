@@ -86,6 +86,7 @@ public class LanguageManagerServiceImpl implements ILanguageManagerService {
 
 	}
 
+	@Override
 	public void init() {
 		IExtensionRegistry registry = Platform.getExtensionRegistry();
 		readLanguageTypes(registry);
@@ -143,22 +144,30 @@ public class LanguageManagerServiceImpl implements ILanguageManagerService {
 						e1.printStackTrace();
 					}
 
+					// Get the plugin ID
 					String pluginID = dataProvider.getPluginID();
 
+					// Get the language map from this Language data provider
 					Map<ILang, Map<String, String>> languageMap = dataProvider.getLanguageMap();
 
+					// Get the entry set for formatting correctly
 					Set<Entry<ILang, Map<String, String>>> entrySet = languageMap.entrySet();
 
 					for (Entry<ILang, Map<String, String>> entry : entrySet) {
 
+						// Check if the language map already exists for this
+						// language
 						Map<String, Map<String, String>> map = languageToData.get(entry.getKey());
 
+						// If map is null for the language, initialize it
 						if (map == null) {
 							map = new HashMap<>();
 						}
 
+						// Put the pluginID + texts in the map
 						map.put(pluginID, entry.getValue());
 
+						// Put lang + texts data in the full map
 						languageToData.put(entry.getKey(), map);
 
 					}

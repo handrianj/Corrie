@@ -10,7 +10,7 @@ import com.handrianj.corrie.viewsmanager.ui.AbstractCorriePerspectiveFactory;
  */
 public class DefaultMenuPerspective extends AbstractCorriePerspectiveFactory {
 
-	public static final String ID = "com.capsa.corrie.viewsmanager.perspectives.DefaultMenuPerspective";
+	public static final String ID = "com.handrianj.corrie.viewsmanager.perspectives.DefaultMenuPerspective";
 
 	@Override
 	protected String getID() {
