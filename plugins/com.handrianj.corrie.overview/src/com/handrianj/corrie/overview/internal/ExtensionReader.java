@@ -29,7 +29,7 @@ public class ExtensionReader {
 
 	private static final String ATTRIB_ACTION_CLASS = "Class";
 
-	private static final String EXTENSION_POINT = "com.capsa.corrie.overview.menuItem";
+	private static final String EXTENSION_POINT = "com.handrianj.corrie.overview.menuItem";
 
 	private static final String ATTRIB_ID = "editorID";
 

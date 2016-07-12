@@ -20,7 +20,7 @@ public class EditorInputFactory {
 
 	private static Map<String, IEditorInputFactory<?>> idToFacto = new HashMap<>();
 
-	private static final String EXTENSION_POINT = "com.capsa.corrie.editors.util.inputs";
+	private static final String EXTENSION_POINT = "com.handrianj.corrie.editors.util.inputs";
 
 	private static final String ATTRIB_EDITORID = "EditorID";
 

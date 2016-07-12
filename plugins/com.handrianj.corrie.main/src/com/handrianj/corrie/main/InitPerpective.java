@@ -22,8 +22,8 @@ import com.handrianj.corrie.serviceregistry.ServiceRegistry;
  *
  */
 public class InitPerpective implements IPerspectiveFactory {
-	public static final String ID = "com.capsa.corrie.main.InitPerpective";
-	private static final String ACTION_MENU_ID = "com.capsa.unic.actions";
+	public static final String ID = "com.handrianj.corrie.main.InitPerpective";
+	private static final String ACTION_MENU_ID = "com.handrianj.unic.actions";
 
 	/*
 	 * (non-Javadoc)

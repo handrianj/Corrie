@@ -31,7 +31,7 @@ public class ServiceRegistry {
 
 		if (dbservice == null) {
 			BundleContext bundleContext = Activator.getDefault().getBundle().getBundleContext();
-			ServiceReference<?> serviceReference = bundleContext.getServiceReference(IDBSessionService.class.getName());
+			ServiceReference<?> serviceReference = bundleContext.getServiceReference(IDBSessionService.class);
 			if (serviceReference != null) {
 				dbservice = (IDBSessionService<IUser>) bundleContext.getService(serviceReference);
 			}
@@ -57,8 +57,7 @@ public class ServiceRegistry {
 
 		if (languageManagerService == null) {
 			BundleContext bundleContext = Activator.getDefault().getBundle().getBundleContext();
-			ServiceReference<?> serviceReference = bundleContext
-					.getServiceReference(ILanguageManagerService.class.getName());
+			ServiceReference<?> serviceReference = bundleContext.getServiceReference(ILanguageManagerService.class);
 			if (serviceReference != null) {
 				languageManagerService = (ILanguageManagerService) bundleContext.getService(serviceReference);
 			}
@@ -69,8 +68,7 @@ public class ServiceRegistry {
 	public static IPictureRegistryService getPictureRegistryService() {
 		if (pictureRegistryService == null) {
 			BundleContext bundleContext = Activator.getDefault().getBundle().getBundleContext();
-			ServiceReference<?> serviceReference = bundleContext
-					.getServiceReference(IPictureRegistryService.class.getName());
+			ServiceReference<?> serviceReference = bundleContext.getServiceReference(IPictureRegistryService.class);
 			if (serviceReference != null) {
 				pictureRegistryService = (IPictureRegistryService) bundleContext.getService(serviceReference);
 			}
@@ -81,8 +79,7 @@ public class ServiceRegistry {
 	public static IEditorPilotService getPilotService() {
 		if (pilotService == null) {
 			BundleContext bundleContext = Activator.getDefault().getBundle().getBundleContext();
-			ServiceReference<?> serviceReference = bundleContext
-					.getServiceReference(IEditorPilotService.class.getName());
+			ServiceReference<?> serviceReference = bundleContext.getServiceReference(IEditorPilotService.class);
 			if (serviceReference != null) {
 				pilotService = (IEditorPilotService) bundleContext.getService(serviceReference);
 			}
@@ -125,8 +122,7 @@ public class ServiceRegistry {
 	public static IApplicationManagerService getApplicationService() {
 		if (applicationService == null) {
 			BundleContext bundleContext = Activator.getDefault().getBundle().getBundleContext();
-			ServiceReference<?> serviceReference = bundleContext
-					.getServiceReference(IApplicationManagerService.class.getName());
+			ServiceReference<?> serviceReference = bundleContext.getServiceReference(IApplicationManagerService.class);
 			if (serviceReference != null) {
 				applicationService = (IApplicationManagerService) bundleContext.getService(serviceReference);
 			}

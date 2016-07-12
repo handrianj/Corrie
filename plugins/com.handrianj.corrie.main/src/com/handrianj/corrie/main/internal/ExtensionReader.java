@@ -13,7 +13,7 @@ import com.handrianj.corrie.applicationmanagerservice.IApplicationConfig;
 
 public class ExtensionReader {
 
-	private static final String EXTENSION_POINT = "com.capsa.corrie.main.defaultLaunch";
+	private static final String EXTENSION_POINT = "com.handrianj.corrie.main.defaultLaunch";
 
 	private static final String ATTRIB_ID = "EditorID";
 

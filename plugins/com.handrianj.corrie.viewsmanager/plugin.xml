@@ -6,12 +6,12 @@
          point="org.eclipse.ui.perspectives">
       <perspective
             class="com.handrianj.corrie.viewsmanager.perspectives.DefaultEmptyPerspective"
-            id="com.capsa.corrie.viewsmanager.perspectives.DefaultEmptyPerspective"
+            id="com.handrianj.corrie.viewsmanager.perspectives.DefaultEmptyPerspective"
             name="Default Empty">
       </perspective>
       <perspective
             class="com.handrianj.corrie.viewsmanager.perspectives.DefaultMenuPerspective"
-            id="com.capsa.corrie.viewsmanager.perspectives.DefaultMenuPerspective"
+            id="com.handrianj.corrie.viewsmanager.perspectives.DefaultMenuPerspective"
             name="Default Menu">
       </perspective>
    </extension>

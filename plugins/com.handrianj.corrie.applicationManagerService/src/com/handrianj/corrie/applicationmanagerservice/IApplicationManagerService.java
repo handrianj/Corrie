@@ -12,6 +12,11 @@ import java.util.List;
 public interface IApplicationManagerService {
 
 	/**
+	 * Initializes the service
+	 */
+	void init();
+
+	/**
 	 * Returns the application configuration item
 	 *
 	 * @param application

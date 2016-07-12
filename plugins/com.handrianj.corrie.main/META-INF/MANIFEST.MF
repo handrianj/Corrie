@@ -28,6 +28,6 @@ Export-Package: com.handrianj.corrie.main;
    org.eclipse.ui.application,
    org.eclipse.ui.plugin",
  com.handrianj.corrie.main.lang;uses:="com.capsa.corrie.languagemanager.service"
-Service-Component: OSGI/applicationManagerService.xml
+Service-Component: OSGI/ApplicationManagerService.xml
 Import-Package: javax.servlet,
  javax.servlet.http

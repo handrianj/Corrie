@@ -7,7 +7,7 @@
       <view
             allowMultiple="false"
             class="com.handrianj.corrie.overview.ui.Overview"
-            id="com.capsa.corrie.overview.ui.overview"
+            id="com.handrianj.corrie.overview.ui.overview"
             name="Overview"
             restorable="true">
       </view>
@@ -15,10 +15,10 @@
    <extension
          point="org.eclipse.ui.perspectiveExtensions">
       <perspectiveExtension
-            targetID="com.capsa.corrie.viewsmanager.perspectives.DefaultMenuPerspective">
+            targetID="com.handrianj.corrie.viewsmanager.perspectives.DefaultMenuPerspective">
          <view
                closeable="false"
-               id="com.capsa.corrie.overview.ui.overview"
+               id="com.handrianj.corrie.overview.ui.overview"
                minimized="false"
                moveable="false"
                ratio="0.1"
@@ -33,8 +33,8 @@
    <extension
          point="com.handrianj.corrie.viewsManager.view">
       <view
-            PerspectiveID="com.capsa.corrie.viewsmanager.perspectives.DefaultMenuPerspective"
-            ViewID="com.capsa.corrie.overview.ui.overview">
+            PerspectiveID="com.handrianj.corrie.viewsmanager.perspectives.DefaultMenuPerspective"
+            ViewID="com.handrianj.corrie.overview.ui.overview">
       </view>
    </extension>
    <extension

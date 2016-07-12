@@ -31,8 +31,6 @@ import com.handrianj.corrie.utilsui.dialog.ui.LogInDialog;
  */
 public class Application implements IApplication {
 
-	private IServiceDBProvider service;
-	private ILanguageManagerService languageService;
 	private IDBSessionService<IUser> dbservice;
 	private static final String USERCODE = "F4330002F5699D6F102F44F19D004E1A";
 
@@ -41,9 +39,6 @@ public class Application implements IApplication {
 		Display display = PlatformUI.createDisplay();
 		WorkbenchAdvisor advisor = new ApplicationWorkbenchAdvisor();
 
-		service = ServiceRegistry.getServiceProviderForSession(RWT.getUISession());
-
-		languageService = ServiceRegistry.getLanguageManagerService();
 		dbservice = ServiceRegistry.getDbservice();
 
 		// Preload pictures here since pictures service need a context
@@ -56,7 +51,8 @@ public class Application implements IApplication {
 			// The handler was already registered
 		}
 
-		return displayDialog(display, languageService, service, advisor);
+		return displayDialog(display, ServiceRegistry.getLanguageManagerService(),
+				ServiceRegistry.getServiceProviderForSession(RWT.getUISession()), advisor);
 
 	}
 
@@ -138,8 +134,6 @@ public class Application implements IApplication {
 			public void beforeDestroy(UISessionEvent event) {
 
 				logoutUser(languageService, sessionManager, currentUISession);
-				Application.this.languageService = null;
-				Application.this.service = null;
 
 			}
 		});

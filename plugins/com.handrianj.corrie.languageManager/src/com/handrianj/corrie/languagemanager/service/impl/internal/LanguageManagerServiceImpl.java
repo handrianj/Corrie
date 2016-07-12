@@ -28,11 +28,11 @@ public class LanguageManagerServiceImpl implements ILanguageManagerService {
 
 	private static final String UNKNOWN_STRING = ": Undefined for ";
 
-	private static final String EXTENSION_POINT_LANGUAGE_FILES = "com.capsa.corrie.languagemanager.langProvider";
+	private static final String EXTENSION_POINT_LANGUAGE_FILES = "com.handrianj.corrie.languagemanager.langProvider";
 
-	private static final String EXTENSION_POINT_LANGUAGES = "com.capsa.corrie.languagemanager.languages";
+	private static final String EXTENSION_POINT_LANGUAGES = "com.handrianj.corrie.languagemanager.languages";
 
-	private static final String EXTENSION_POINT_LANGUAGE_DEFAULTS = "com.capsa.corrie.languagemanager.defaults";
+	private static final String EXTENSION_POINT_LANGUAGE_DEFAULTS = "com.handrianj.corrie.languagemanager.defaults";
 
 	private static final String ATTRIB_LANGUAGE_ID = "langId";
 
@@ -86,7 +86,6 @@ public class LanguageManagerServiceImpl implements ILanguageManagerService {
 
 	}
 
-	@Override
 	public void init() {
 		IExtensionRegistry registry = Platform.getExtensionRegistry();
 		readLanguageTypes(registry);

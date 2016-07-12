@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="com.capsa.unic.viewsmanager.manager.internal.IViewsManagerService">
-   <implementation class="com.capsa.unic.viewsmanager.manager.internal.ViewsManagerServiceImpl"/>
-   <service>
-      <provide interface="com.capsa.unic.viewsmanager.ui.IViewsManagerService"/>
-   </service>
-</scr:component>

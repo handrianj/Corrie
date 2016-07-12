@@ -7,14 +7,13 @@
          id="capsa.corrie.entrypoints"
          point="org.eclipse.rap.ui.entrypoint">
       <entrypoint
-            applicationId="com.capsa.corrie.main"
-            brandingId="unic.branding"
+            applicationId="com.handrianj.corrie.main"
             id="corrie.entrypoint"
             path="/">
       </entrypoint>
    </extension>
    <extension
-         id="com.capsa.corrie.main"
+         id="com.handrianj.corrie.main"
          point="org.eclipse.core.runtime.applications">
       <application
             cardinality="singleton-global"
