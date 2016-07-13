@@ -94,7 +94,9 @@ public class ExtensionReader {
 			String langID = childElement.getAttribute(ATTRIB_LANG_ID);
 			String name = childElement.getAttribute(ATTRIB_LANG_NAMES);
 
-			langMap.put(Integer.parseInt(langID), name);
+			if (langID != null) {
+				langMap.put(Integer.parseInt(langID), name);
+			}
 
 		}
 

@@ -12,7 +12,7 @@ import com.handrianj.corrie.picregistry.service.impl.internal.PicturesRegistrySe
 public class Activator extends AbstractUIPlugin {
 
 	// The plug-in ID
-	public static final String PLUGIN_ID = "com.capsa.corrie.picregistry"; //$NON-NLS-1$
+	public static final String PLUGIN_ID = "com.handrianj.corrie.picregistry"; //$NON-NLS-1$
 
 	// The shared instance
 	private static Activator plugin;

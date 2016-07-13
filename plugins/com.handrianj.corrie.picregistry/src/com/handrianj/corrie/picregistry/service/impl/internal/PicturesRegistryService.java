@@ -21,7 +21,7 @@ public class PicturesRegistryService implements IPictureRegistryService {
 
 	private static final String NO_PICTURE_KEY = "icons/nopic.png";
 
-	private static final String EXTENSION_POINT = "com.capsa.corrie.picregistry.preload";
+	private static final String EXTENSION_POINT = "com.handrianj.corrie.picregistry.preload";
 
 	private static final String ATTRIB_PLUGIN_ID = "PluginID";
 
