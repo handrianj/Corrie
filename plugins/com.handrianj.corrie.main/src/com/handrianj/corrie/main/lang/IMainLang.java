@@ -21,8 +21,6 @@ public interface IMainLang {
 
 	public static final String LOGIN_ERROR_ALREADY_3 = "LoginDialog_10";
 
-	public static final String ACTION_MENU = "ACTION_MENU";
-
 	public static final String LOGIN_ERROR_COMBINATION = "LoginDialog_6";
 
 	/**
@@ -39,7 +37,5 @@ public interface IMainLang {
 	public static final String LOGIN_ERROR_ALREADY_2_TEXT_EN = "This user is already logged in. Do you want to close the previous session";
 
 	public static final String LOGIN_ERROR_ALREADY_3_TEXT_EN = "This user is disabled";
-
-	public static final String ACTION_MENU_TEXT_EN = "Actions";
 
 }

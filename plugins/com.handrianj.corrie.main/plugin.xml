@@ -33,13 +33,6 @@
       </perspective>
    </extension>
    <extension
-         point="org.eclipse.ui.commands">
-      <category
-            id="com.handrianj.corrie.actions"
-            name="Actions">
-      </category>
-   </extension>
-   <extension
          point="com.handrianj.corrie.languagemanager.defaults">
       <DefaultLanguage
             LanguageProviderClass="com.handrianj.corrie.main.lang.MainLang">
