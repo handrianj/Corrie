@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.4"?>
-<plugin>
-   <extension-point id="com.handrianj.corrie.languagemanager.langProvider" name="com.handrianj.corrie.languagemanager.langProvider" schema="schema/com.handrianj.corrie.languagemanager.langProvider.exsd"/>
-   <extension-point id="com.handrianj.corrie.languagemanager.languages" name="com.handrianj.corrie.languagemanager.languages" schema="schema/com.handrianj.corrie.languagemanager.languages.exsd"/>
-   <extension-point id="com.handrianj.corrie.languagemanager.defaults" name="com.handrianj.corrie.languagemanager.defaults" schema="schema/com.handrianj.corrie.languagemanager.defaults.exsd"/>
-
-</plugin>

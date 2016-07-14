@@ -1,0 +1,237 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="org.handrianj.corrie.overview" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appinfo>
+         <meta.schema plugin="org.handrianj.corrie.overview" id="org.handrianj.corrie.overview.menuItem" name="org.handrianj.corrie.overview.menuItem"/>
+      </appinfo>
+      <documentation>
+         Extension point used to add new menus to the item on the left
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appinfo>
+            <meta.element />
+         </appinfo>
+      </annotation>
+      <complexType>
+         <sequence minOccurs="1" maxOccurs="unbounded">
+            <choice>
+               <element ref="Editor" minOccurs="0" maxOccurs="unbounded"/>
+               <element ref="SimpleMenu" minOccurs="0" maxOccurs="unbounded"/>
+            </choice>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="Editor">
+      <complexType>
+         <sequence minOccurs="0" maxOccurs="unbounded">
+            <element ref="Role" minOccurs="1" maxOccurs="unbounded"/>
+            <element ref="Name" minOccurs="1" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="editorID" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="identifier" basedOn="org.eclipse.ui.editors/editor/@id"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="order" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="Role">
+      <complexType>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="SimpleMenu">
+      <complexType>
+         <choice>
+            <element ref="Editor" minOccurs="0" maxOccurs="unbounded"/>
+            <element ref="SimpleMenu" minOccurs="0" maxOccurs="unbounded"/>
+            <element ref="Action" minOccurs="0" maxOccurs="unbounded"/>
+            <sequence>
+               <element ref="Name" minOccurs="1" maxOccurs="unbounded"/>
+            </sequence>
+         </choice>
+         <attribute name="menuID" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="itemName-EN" type="string" use="default" value="Menu">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="itemName-CN" type="string" use="default" value="Menu-cn">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="order" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="Action">
+      <complexType>
+         <sequence>
+            <element ref="Name" minOccurs="1" maxOccurs="unbounded"/>
+         </sequence>
+         <attribute name="Class" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn="org.eclipse.jface.action.Action:"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="actionID" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="itemName-EN" type="string" use="default" value="Action">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="itemName-CN" type="string" use="default" value="Action-cn">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="order" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="Name">
+      <complexType>
+         <attribute name="LangID" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="identifier" basedOn="org.handrianj.corrie.languagemanager.languages/Language/@langId"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="Name" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="since"/>
+      </appinfo>
+      <documentation>
+         [Enter the first release in which this extension point appears.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="examples"/>
+      </appinfo>
+      <documentation>
+         [Enter extension point usage example here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="apiinfo"/>
+      </appinfo>
+      <documentation>
+         [Enter API information here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="implementation"/>
+      </appinfo>
+      <documentation>
+         [Enter information about supplied implementation of this extension point.]
+      </documentation>
+   </annotation>
+
+
+</schema>

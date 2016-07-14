@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Datamodel
+Bundle-SymbolicName: org.handrianj.corrie.datamodel
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.handrianj.corrie.datamodel.Activator
+Bundle-Vendor: CAPSA
+Require-Bundle: org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: org.handrianj.corrie.datamodel.structure,
+ org.handrianj.corrie.datamodel.structure.impl

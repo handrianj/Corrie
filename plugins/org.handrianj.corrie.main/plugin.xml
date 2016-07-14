@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="org.handrianj.corrie.main.defaultLaunch" name="org.handrianj.corrie.main.defaultLaunch" schema="schema/org.handrianj.corrie.main.defaultLaunch.exsd"/>
+
+   <extension
+         id="capsa.corrie.entrypoints"
+         point="org.eclipse.rap.ui.entrypoint">
+      <entrypoint
+            applicationId="org.handrianj.corrie.main"
+            id="corrie.entrypoint"
+            path="/">
+      </entrypoint>
+   </extension>
+   <extension
+         id="org.handrianj.corrie.main"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            cardinality="singleton-global"
+            thread="main"
+            visible="true">
+         <run
+               class="org.handrianj.corrie.main.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="org.handrianj.corrie.main.InitPerpective"
+            id="org.handrianj.corrie.main.InitPerpective"
+            name="%perspective.name">
+      </perspective>
+   </extension>
+   <extension
+         point="org.handrianj.corrie.languagemanager.defaults">
+      <DefaultLanguage
+            LanguageProviderClass="org.handrianj.corrie.main.lang.MainLang">
+      </DefaultLanguage>
+   </extension>
+
+</plugin>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="org.handrianj.corrie.overview.menuItem" name="org.handrianj.corrie.overview.menuItem" schema="schema/org.handrianj.corrie.overview.menuItem.exsd"/>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="false"
+            class="org.handrianj.corrie.overview.ui.Overview"
+            id="org.handrianj.corrie.overview.ui.overview"
+            name="Overview"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.handrianj.corrie.viewsmanager.perspectives.DefaultMenuPerspective">
+         <view
+               closeable="false"
+               id="org.handrianj.corrie.overview.ui.overview"
+               minimized="false"
+               moveable="false"
+               ratio="0.1"
+               relationship="left"
+               relative="org.eclipse.ui.editorss"
+               showTitle="false"
+               standalone="true"
+               visible="true">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.handrianj.corrie.viewsManager.view">
+      <view
+            PerspectiveID="org.handrianj.corrie.viewsmanager.perspectives.DefaultMenuPerspective"
+            ViewID="org.handrianj.corrie.overview.ui.overview">
+      </view>
+   </extension>
+   <extension
+         point="org.handrianj.corrie.languagemanager.defaults">
+      <DefaultLanguage
+            LanguageProviderClass="org.handrianj.corrie.overview.lang.OverviewLang">
+      </DefaultLanguage>
+   </extension>
+
+</plugin>

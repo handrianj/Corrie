@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="org.handrianj.corrie.viewsManager.view" name="org.handrianj.corrie.viewsManager.view" schema="schema/org.handrianj.corrie.viewsManager.capsaView.exsd"/>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="org.handrianj.corrie.viewsmanager.perspectives.DefaultEmptyPerspective"
+            id="org.handrianj.corrie.viewsmanager.perspectives.DefaultEmptyPerspective"
+            name="Default Empty">
+      </perspective>
+      <perspective
+            class="org.handrianj.corrie.viewsmanager.perspectives.DefaultMenuPerspective"
+            id="org.handrianj.corrie.viewsmanager.perspectives.DefaultMenuPerspective"
+            name="Default Menu">
+      </perspective>
+   </extension>
+
+</plugin>

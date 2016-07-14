@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Editor Utils
+Bundle-SymbolicName: org.handrianj.corrie.editors.util;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.handrianj.corrie.editors.util.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.rap.ui.workbench;visibility:=reexport,
+ org.eclipse.rap.jface;visibility:=reexport,
+ org.handrianj.corrie.utilsUI;visibility:=reexport,
+ org.handrianj.corrie.viewsmanager;visibility:=reexport,
+ org.handrianj.corrie.languageManager;visibility:=reexport,
+ org.handrianj.corrie.sessionmanager;visibility:=reexport,
+ org.handrianj.corrie.dblink,
+ org.handrianj.corrie.dblink.impl
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: org.handrianj.corrie.editors.util.editors,
+ org.handrianj.corrie.editors.util.factories
