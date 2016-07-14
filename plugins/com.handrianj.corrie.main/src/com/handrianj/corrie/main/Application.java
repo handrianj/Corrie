@@ -22,7 +22,6 @@ import com.handrianj.corrie.main.internal.DownloadServiceHandler;
 import com.handrianj.corrie.main.lang.IMainLang;
 import com.handrianj.corrie.serviceregistry.ServiceRegistry;
 import com.handrianj.corrie.sessionmanager.service.ISessionManager;
-import com.handrianj.corrie.utilsui.dialog.action.UpdatePasswordAction;
 import com.handrianj.corrie.utilsui.dialog.ui.LogInDialog;
 
 /**
@@ -32,7 +31,6 @@ import com.handrianj.corrie.utilsui.dialog.ui.LogInDialog;
 public class Application implements IApplication {
 
 	private IDBSessionService<IUser> dbservice;
-	private static final String USERCODE = "F4330002F5699D6F102F44F19D004E1A";
 
 	@Override
 	public Object start(IApplicationContext context) throws Exception {
@@ -138,11 +136,6 @@ public class Application implements IApplication {
 			}
 		});
 
-		if (activeUser.getPassWord().compareTo(USERCODE) == 0) {
-			UpdatePasswordAction action = new UpdatePasswordAction(null, languageService, true);
-
-			action.run();
-		}
 		return PlatformUI.createAndRunWorkbench(display, advisor);
 	}
 
