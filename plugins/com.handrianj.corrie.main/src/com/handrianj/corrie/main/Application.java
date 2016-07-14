@@ -16,7 +16,7 @@ import org.osgi.framework.ServiceReference;
 
 import com.handrianj.corrie.dblink.model.IUser;
 import com.handrianj.corrie.dblink.services.IDBSessionService;
-import com.handrianj.corrie.dblink.services.IServiceDBProvider;
+import com.handrianj.corrie.dblink.services.IDAOProvider;
 import com.handrianj.corrie.languagemanager.service.ILanguageManagerService;
 import com.handrianj.corrie.main.internal.DownloadServiceHandler;
 import com.handrianj.corrie.main.lang.IMainLang;
@@ -54,7 +54,7 @@ public class Application implements IApplication {
 
 	}
 
-	private Object displayDialog(Display display, ILanguageManagerService languageService, IServiceDBProvider service,
+	private Object displayDialog(Display display, ILanguageManagerService languageService, IDAOProvider service,
 			WorkbenchAdvisor advisor) {
 
 		// Open the login dialog
@@ -120,7 +120,7 @@ public class Application implements IApplication {
 	}
 
 	@SuppressWarnings("serial")
-	private Object loginUser(Display display, final ILanguageManagerService languageService, IServiceDBProvider service,
+	private Object loginUser(Display display, final ILanguageManagerService languageService, IDAOProvider service,
 			WorkbenchAdvisor advisor, IUser activeUser, final ISessionManager sessionManager,
 			final UISession currentUISession) {
 

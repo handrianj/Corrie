@@ -2,6 +2,13 @@ package com.handrianj.corrie.viewsmanager.ui;
 
 import java.util.List;
 
+/**
+ * The IViewsManagerService is a service to store all the views data according
+ * to a perspective
+ * 
+ * @author Heri Andrianjafy
+ *
+ */
 public interface IViewsManagerService {
 
 	/**

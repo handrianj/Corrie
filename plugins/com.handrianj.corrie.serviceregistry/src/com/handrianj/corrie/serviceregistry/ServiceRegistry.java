@@ -8,7 +8,7 @@ import com.handrianj.corrie.applicationmanagerservice.IApplicationManagerService
 import com.handrianj.corrie.dblink.model.IUser;
 import com.handrianj.corrie.dblink.services.IConstantService;
 import com.handrianj.corrie.dblink.services.IDBSessionService;
-import com.handrianj.corrie.dblink.services.IServiceDBProvider;
+import com.handrianj.corrie.dblink.services.IDAOProvider;
 import com.handrianj.corrie.editors.util.editors.IEditorPilotService;
 import com.handrianj.corrie.languagemanager.service.ILanguageManagerService;
 import com.handrianj.corrie.picregistry.service.IPictureRegistryService;
@@ -110,7 +110,7 @@ public class ServiceRegistry {
 		return constantService;
 	}
 
-	public static IServiceDBProvider getServiceProviderForSession(UISession session) {
+	public static IDAOProvider getServiceProviderForSession(UISession session) {
 		ISessionManager sessionManager = getSessionManager();
 		IUser user = sessionManager.getUser(session);
 

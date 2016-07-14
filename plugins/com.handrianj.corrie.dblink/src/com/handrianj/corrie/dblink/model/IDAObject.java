@@ -6,6 +6,6 @@ package com.handrianj.corrie.dblink.model;
  * @author Heri Andrianjafy
  *
  */
-public interface IDBObjectAccessor {
+public interface IDAObject {
 
 }

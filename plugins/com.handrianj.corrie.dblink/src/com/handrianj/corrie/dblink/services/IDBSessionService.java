@@ -16,7 +16,7 @@ public interface IDBSessionService<T extends IUser> {
 	 * @param user
 	 * @return
 	 */
-	public IServiceDBProvider getServiceForUser(T user);
+	public IDAOProvider getServiceForUser(T user);
 
 	/**
 	 * Closes the DB session for a user

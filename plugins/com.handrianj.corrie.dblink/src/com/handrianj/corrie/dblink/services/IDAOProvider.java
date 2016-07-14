@@ -1,6 +1,6 @@
 package com.handrianj.corrie.dblink.services;
 
-import com.handrianj.corrie.dblink.model.IDBObjectAccessor;
+import com.handrianj.corrie.dblink.model.IDAObject;
 
 /**
  * Service used to store all the DB access classes
@@ -8,7 +8,7 @@ import com.handrianj.corrie.dblink.model.IDBObjectAccessor;
  * @author Henry
  *
  */
-public interface IServiceDBProvider {
+public interface IDAOProvider {
 
 	/**
 	 * Get the DB access for the object class in parameter
@@ -16,6 +16,6 @@ public interface IServiceDBProvider {
 	 * @param clazz
 	 * @return
 	 */
-	IDBObjectAccessor getDBAccessForClass(Class<?> clazz);
+	IDAObject getDBAccessForClass(Class<?> clazz);
 
 }
