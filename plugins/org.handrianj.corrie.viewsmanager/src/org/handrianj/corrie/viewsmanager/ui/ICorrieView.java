@@ -1,7 +1,7 @@
 package org.handrianj.corrie.viewsmanager.ui;
 
 /**
- * This is the basic interface used by all UNIC Viewparts
+ * This is the basic interface used by all Corrie Viewparts
  *
  * @author Heri Andrianjafy
  *

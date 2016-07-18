@@ -15,12 +15,11 @@ import org.handrianj.corrie.editors.util.factories.EditorInputFactory;
 import org.handrianj.corrie.editors.util.factories.IEditorInputFactory;
 import org.handrianj.corrie.languagemanager.service.ILanguageManagerListener;
 import org.handrianj.corrie.languagemanager.service.ILanguageManagerService;
-import org.osgi.framework.BundleContext;
-import org.osgi.framework.ServiceReference;
-
 import org.handrianj.corrie.viewsmanager.ui.ICorrieView;
 import org.handrianj.corrie.viewsmanager.ui.IViewData;
 import org.handrianj.corrie.viewsmanager.ui.IViewsManagerService;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceReference;
 
 /**
  * Standard abstract editor for Corrie
@@ -41,7 +40,6 @@ public abstract class AbstractCorrieEditor<T extends Object> extends EditorPart
 		ServiceReference<?> serviceReference = bundleContext.getServiceReference(IEditorPilotService.class.getName());
 		pilotService = (IEditorPilotService) bundleContext.getService(serviceReference);
 		factory = (IEditorInputFactory<T>) EditorInputFactory.getFactory(getID());
-
 	}
 
 	@Override
