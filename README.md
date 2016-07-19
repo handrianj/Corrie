@@ -5,4 +5,6 @@ The com.handrianj.corrie.graphics plugin requires a modified verion of rap-chart
 
 The org.handrianj.hermes plugin requires Apache POI available here : https://poi.apache.org/download.html
 
+Framework documentation is located here : https://github.com/handrianj/Corrie/wiki
+
 This project is licenced under GNU GPL 3. 
