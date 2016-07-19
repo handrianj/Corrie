@@ -2,7 +2,7 @@ package org.handrianj.corrie.usermanager.editor;
 
 import java.util.List;
 
-import org.handrianj.corrie.dblink.model.IUser;
+import org.handrianj.corrie.datamodel.entities.IUser;
 import org.handrianj.corrie.editors.util.factories.IEditorInputFactory;
 
 /**

@@ -3,7 +3,7 @@ package org.handrianj.corrie.dblink.services;
 import org.handrianj.corrie.dblink.model.IDAObject;
 
 /**
- * Service used to store all the DB access classes
+ * Service used to store all the DAO objects
  *
  * @author Henry
  *
@@ -17,5 +17,10 @@ public interface IDAOProvider {
 	 * @return
 	 */
 	IDAObject getDBAccessForClass(Class<?> clazz);
+
+	/**
+	 * Close the DB session
+	 */
+	void closeSession();
 
 }

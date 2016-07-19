@@ -1,6 +1,6 @@
 package org.handrianj.corrie.dblink.services;
 
-import org.handrianj.corrie.dblink.model.IUser;
+import org.handrianj.corrie.datamodel.entities.IUser;
 
 /**
  * Service used to managed all the DB sessions for each user

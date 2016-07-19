@@ -2,7 +2,7 @@ package org.handrianj.corrie.serviceregistry;
 
 import org.eclipse.rap.rwt.service.UISession;
 import org.handrianj.corrie.applicationmanagerservice.IApplicationManagerService;
-import org.handrianj.corrie.dblink.model.IUser;
+import org.handrianj.corrie.datamodel.entities.IUser;
 import org.handrianj.corrie.dblink.services.IConstantService;
 import org.handrianj.corrie.dblink.services.IDAOProvider;
 import org.handrianj.corrie.dblink.services.IDBSessionService;

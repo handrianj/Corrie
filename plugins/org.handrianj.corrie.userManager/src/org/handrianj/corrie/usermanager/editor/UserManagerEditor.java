@@ -27,7 +27,7 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.PartInitException;
-import org.handrianj.corrie.dblink.model.IUser;
+import org.handrianj.corrie.datamodel.entities.IUser;
 import org.handrianj.corrie.editors.util.editors.AbstractCorrieEditor;
 import org.handrianj.corrie.editors.util.editors.AbstractCorrieEditorInput;
 import org.handrianj.corrie.editors.util.editors.ICorrieEditorInput;

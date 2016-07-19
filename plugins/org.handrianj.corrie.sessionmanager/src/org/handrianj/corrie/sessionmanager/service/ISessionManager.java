@@ -1,7 +1,7 @@
 package org.handrianj.corrie.sessionmanager.service;
 
 import org.eclipse.rap.rwt.service.UISession;
-import org.handrianj.corrie.dblink.model.IUser;
+import org.handrianj.corrie.datamodel.entities.IUser;
 
 /**
  * Interface to manage all the unic users sessions as well as DAO accesses for

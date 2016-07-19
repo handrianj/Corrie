@@ -9,7 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.eclipse.rap.rwt.RWT;
 import org.eclipse.rap.rwt.service.UISession;
-import org.handrianj.corrie.dblink.model.IUser;
+import org.handrianj.corrie.datamodel.entities.IUser;
 import org.handrianj.corrie.sessionmanager.service.ISessionManager;
 import org.handrianj.corrie.sessionmanager.service.ISessionManagerDelegate;
 

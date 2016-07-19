@@ -18,7 +18,8 @@ Require-Bundle: org.eclipse.rap.ui;bundle-version="[2.0.0,4.0.0)",
  org.handrianj.corrie.utilsUI.dialog,
  org.handrianj.corrie.picregistry,
  org.handrianj.corrie.dblink,
- org.handrianj.corrie.applicationManagerService
+ org.handrianj.corrie.applicationManagerService,
+ org.handrianj.corrie.datamodel;bundle-version="1.0.0"
 Export-Package: org.handrianj.corrie.main;
   uses:="org.osgi.framework,
    org.eclipse.ui,

@@ -6,7 +6,10 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.handrianj.corrie.dblink.Activator
 Bundle-Vendor: CAPSA
 Require-Bundle: org.eclipse.core.runtime,
- org.handrianj.corrie.languageManager
+ org.handrianj.corrie.languageManager,
+ org.eclipse.osgi,
+ org.handrianj.corrie.datamodel,
+ org.handrianj.corrie.sessionmanager
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.handrianj.corrie.dblink.model,

@@ -1,7 +1,7 @@
 package org.handrianj.corrie.usermanager.editor;
 
 import org.eclipse.jface.viewers.Viewer;
-import org.handrianj.corrie.dblink.model.IUser;
+import org.handrianj.corrie.datamodel.entities.IUser;
 import org.handrianj.corrie.utilsui.AbstractTableViewerComparator;
 
 public class UserListComparator<U extends IUser> extends AbstractTableViewerComparator {

@@ -11,7 +11,7 @@ import org.eclipse.rap.rwt.service.UISessionListener;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.application.WorkbenchAdvisor;
-import org.handrianj.corrie.dblink.model.IUser;
+import org.handrianj.corrie.datamodel.entities.IUser;
 import org.handrianj.corrie.dblink.services.IDAOProvider;
 import org.handrianj.corrie.dblink.services.IDBSessionService;
 import org.handrianj.corrie.languagemanager.service.ILanguageManagerService;

@@ -1,4 +1,4 @@
-package org.handrianj.corrie.dblink.model;
+package org.handrianj.corrie.datamodel.entities;
 
 import java.util.Set;
 

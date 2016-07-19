@@ -1,6 +1,6 @@
 package org.handrianj.corrie.sessionmanager.service;
 
-import org.handrianj.corrie.dblink.model.IUser;
+import org.handrianj.corrie.datamodel.entities.IUser;
 
 /**
  * Interface provided for additional actions in the session manager
