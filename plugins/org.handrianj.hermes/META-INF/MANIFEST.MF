@@ -14,10 +14,10 @@ Export-Package: org.handrianj.corrie.hermes;uses:="org.osgi.framework,org.eclips
  org.apache.poi.ss.usermodel;uses:="org.apache.poi.openxml4j.opc,org.apache.poi.poifs.filesystem",
  org.handrianj.corrie.hermes.datamodel,
  org.handrianj.corrie.hermes.parser;uses:="org.handrianj.corrie.hermes.datamodel"
-Bundle-ClassPath: lib/poi-3.13-20150929.jar,
- lib/poi-examples-3.13-20150929.jar,
- lib/poi-excelant-3.13-20150929.jar,
- lib/poi-ooxml-3.13-20150929.jar,
- lib/poi-ooxml-schemas-3.13-20150929.jar,
- lib/poi-scratchpad-3.13-20150929.jar,
+Bundle-ClassPath: lib/poi-3.14-20160307.jar,
+ lib/poi-excelant-3.14-20160307.jar,
+ lib/poi-ooxml-3.14-20160307.jar,
+ lib/poi-ooxml-schemas-3.14-20160307.jar,
+ lib/poi-scratchpad-3.14-20160307.jar,
+ lib/xmlbeans-2.6.0.jar,
  .
