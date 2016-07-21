@@ -22,6 +22,8 @@ import org.handrianj.corrie.languagemanager.service.ILang;
 import org.handrianj.corrie.languagemanager.service.ILanguageDataProvider;
 import org.handrianj.corrie.languagemanager.service.ILanguageManagerListener;
 import org.handrianj.corrie.languagemanager.service.ILanguageManagerService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class LanguageManagerServiceImpl implements ILanguageManagerService {
 
@@ -48,6 +50,8 @@ public class LanguageManagerServiceImpl implements ILanguageManagerService {
 	private List<LanguageData> allLanguages = new ArrayList<>();
 
 	private LanguageData defaultLanguage;
+
+	private static Logger logger = LoggerFactory.getLogger(LanguageManagerServiceImpl.class);
 
 	// Map that stores the current session with the differents UI Threads, this
 	// is doe in order to avoir invalid thread access
@@ -140,7 +144,7 @@ public class LanguageManagerServiceImpl implements ILanguageManagerService {
 					try {
 						dataProvider = (ILanguageDataProvider) element.createExecutableExtension(ATTRIB_PROVIDER_CLASS);
 					} catch (CoreException e1) {
-						e1.printStackTrace();
+						logger.error(e1.getMessage(), e1);
 					}
 
 					// Get the plugin ID

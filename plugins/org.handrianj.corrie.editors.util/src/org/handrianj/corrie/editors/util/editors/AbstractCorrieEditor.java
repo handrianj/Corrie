@@ -20,6 +20,8 @@ import org.handrianj.corrie.viewsmanager.ui.IViewData;
 import org.handrianj.corrie.viewsmanager.ui.IViewsManagerService;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Standard abstract editor for Corrie
@@ -31,6 +33,8 @@ import org.osgi.framework.ServiceReference;
 public abstract class AbstractCorrieEditor<T extends Object> extends EditorPart
 		implements ICorrieEditor<T>, ILanguageManagerListener {
 
+	private static Logger logger = LoggerFactory.getLogger(AbstractCorrieEditor.class);
+
 	private IEditorPilotService pilotService;
 	private IEditorInputFactory<T> factory;
 
@@ -40,6 +44,11 @@ public abstract class AbstractCorrieEditor<T extends Object> extends EditorPart
 		ServiceReference<?> serviceReference = bundleContext.getServiceReference(IEditorPilotService.class.getName());
 		pilotService = (IEditorPilotService) bundleContext.getService(serviceReference);
 		factory = (IEditorInputFactory<T>) EditorInputFactory.getFactory(getID());
+
+		if (logger.isDebugEnabled()) {
+			logger.debug("Creating editor " + getID());
+		}
+
 	}
 
 	@Override
@@ -72,6 +81,10 @@ public abstract class AbstractCorrieEditor<T extends Object> extends EditorPart
 	 */
 	protected void updateViewsInput(Object obj) {
 
+		if (logger.isDebugEnabled()) {
+			logger.debug("Updating view content with  " + obj);
+		}
+
 		IWorkbench workbench = getSite().getWorkbenchWindow().getWorkbench();
 
 		// Use the service to open the view with the perspective
@@ -89,6 +102,11 @@ public abstract class AbstractCorrieEditor<T extends Object> extends EditorPart
 			IViewPart findView = activePage.findView(viewData.getID());
 
 			if ((findView != null) && (findView instanceof ICorrieView)) {
+
+				if (logger.isDebugEnabled()) {
+					logger.debug("Updating " + findView.getTitle());
+				}
+
 				((ICorrieView) findView).updateInput(obj);
 			}
 		}

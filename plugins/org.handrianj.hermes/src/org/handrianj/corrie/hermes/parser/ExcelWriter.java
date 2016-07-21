@@ -17,6 +17,8 @@ import org.handrianj.corrie.hermes.datamodel.CellData;
 import org.handrianj.corrie.hermes.datamodel.ExcelDocument;
 import org.handrianj.corrie.hermes.datamodel.ExcelSheet;
 import org.handrianj.corrie.hermes.datamodel.IFormula;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Class used to write an excel file from an ExcelSheet, will use the .xlsx
@@ -26,6 +28,8 @@ import org.handrianj.corrie.hermes.datamodel.IFormula;
  *
  */
 public class ExcelWriter {
+
+	private static Logger logger = LoggerFactory.getLogger(ExcelWriter.class);
 
 	public static byte[] getByteFormat(ExcelDocument doc) {
 
@@ -91,7 +95,7 @@ public class ExcelWriter {
 			workBook.close();
 			return byteOutput.toByteArray();
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error(e.getMessage(), e);
 		} finally {
 
 		}

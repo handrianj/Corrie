@@ -11,7 +11,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.handrianj.corrie.dblink.impl,
  org.handrianj.corrie.editors.util,
  org.handrianj.corrie.dblink,
- org.handrianj.corrie.serviceregistry
+ org.handrianj.corrie.serviceregistry,
+ org.handrianj.corrie.loggers;visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.handrianj.corrie.dataeditor.editor,

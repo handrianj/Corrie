@@ -10,8 +10,12 @@ import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
 import org.handrianj.corrie.sessionmanager.service.ISessionManagerDelegate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ExtensionReader {
+
+	private static Logger logger = LoggerFactory.getLogger(ExtensionReader.class);
 
 	private static final String EXTENSION_POINT = "org.handrianj.corrie.sessionmanager.sessiondelegate";
 
@@ -40,8 +44,7 @@ public class ExtensionReader {
 						delegateInstance = (ISessionManagerDelegate) element
 								.createExecutableExtension(ATTRIB_DELEGATE_CLASS);
 					} catch (CoreException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+						logger.error(e.getMessage(), e);
 					}
 
 					if (delegateInstance != null) {

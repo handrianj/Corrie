@@ -13,6 +13,8 @@ import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.action.Action;
 import org.handrianj.corrie.datamodel.structure.impl.TreeStructure;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Class used by the extension point to read items added to the menu
@@ -21,6 +23,8 @@ import org.handrianj.corrie.datamodel.structure.impl.TreeStructure;
  *
  */
 public class ExtensionReader {
+
+	private static Logger logger = LoggerFactory.getLogger(ExtensionReader.class);
 
 	private static final String ATTRIB_MENU_ID = "menuID";
 
@@ -56,6 +60,10 @@ public class ExtensionReader {
 	public static TreeStructure<Object> readExtensionPoint() {
 
 		if (!init) {
+
+			if (logger.isDebugEnabled()) {
+				logger.debug("Start reading the tree data");
+			}
 
 			init = true;
 
@@ -123,16 +131,26 @@ public class ExtensionReader {
 					}
 				}
 
+				if (logger.isDebugEnabled()) {
+					logger.debug("Creating node for editor " + editorID);
+				}
+
 				newNode = new TreeStructure<Object>(new EditorData(editorID, orderNumber, langMap, ids));
 			}
 			// else is action
 			else {
 				try {
+
 					Action actionInstance = (Action) element.createExecutableExtension(ATTRIB_ACTION_CLASS);
 					newNode = new TreeStructure<Object>(new ActionData(actionInstance, actionID, orderNumber, langMap));
+
+					if (logger.isDebugEnabled()) {
+						logger.debug("Creating node for action " + actionID);
+					}
+
 				} catch (CoreException e) {
 
-					e.printStackTrace();
+					logger.error(e.getMessage(), e);
 				}
 			}
 
@@ -162,6 +180,10 @@ public class ExtensionReader {
 
 			// If the menu is not already registered, put it in the map
 			if (!idToMenu.containsKey(menuID)) {
+
+				if (logger.isDebugEnabled()) {
+					logger.debug("Creating subMenu " + idToMenu);
+				}
 
 				idToMenu.put(menuID, newNode);
 				currentNode.addChildren(newNode);

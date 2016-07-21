@@ -5,11 +5,12 @@ import org.eclipse.core.runtime.IExtension;
 import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
-import org.osgi.framework.BundleContext;
-import org.osgi.framework.ServiceReference;
-
 import org.handrianj.corrie.viewsmanager.manager.internal.ViewData;
 import org.handrianj.corrie.viewsmanager.ui.IViewsManagerService;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceReference;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Class used to read the extension points for the view contributions
@@ -18,6 +19,8 @@ import org.handrianj.corrie.viewsmanager.ui.IViewsManagerService;
  *
  */
 public final class ViewsExtensionReader {
+
+	private static Logger logger = LoggerFactory.getLogger(ViewsExtensionReader.class);
 
 	private static final String EXTENSION_POINT = "org.handrianj.corrie.viewsManager.capsaView";
 
@@ -43,6 +46,10 @@ public final class ViewsExtensionReader {
 						String perspectiveAttribute = element.getAttribute(ATTRIB_PERSPECTIVE);
 
 						String idAttribute = element.getAttribute(ATTRIB_ID);
+
+						if (logger.isDebugEnabled()) {
+							logger.debug("Adding view : " + idAttribute + " with perspective :" + perspectiveAttribute);
+						}
 
 						service.addView(new ViewData(idAttribute), perspectiveAttribute);
 					}

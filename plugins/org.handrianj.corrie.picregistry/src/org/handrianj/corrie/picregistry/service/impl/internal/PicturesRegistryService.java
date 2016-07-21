@@ -15,8 +15,12 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 import org.handrianj.corrie.picregistry.Activator;
 import org.handrianj.corrie.picregistry.service.IPictureRegistryService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class PicturesRegistryService implements IPictureRegistryService {
+
+	private static Logger logger = LoggerFactory.getLogger(PicturesRegistryService.class);
 
 	private static final String NO_PICTURE_KEY = "icons/nopic.png";
 
@@ -43,6 +47,9 @@ public class PicturesRegistryService implements IPictureRegistryService {
 
 		// If registry not null, no need to preload pictures again
 		if (registry == null) {
+
+			logger.info("Registry initialization");
+
 			// registry = new ImageRegistry();
 			registry = new ConcurrentHashMap<>();
 
@@ -61,6 +68,8 @@ public class PicturesRegistryService implements IPictureRegistryService {
 					}
 				}
 			}
+
+			logger.info("Registry initialization complete with {} pictures total ", this.registry.size());
 		}
 
 	}
@@ -70,6 +79,10 @@ public class PicturesRegistryService implements IPictureRegistryService {
 
 		for (IConfigurationElement currentFolder : folderList) {
 			String folderAttrib = currentFolder.getAttribute(ITEM_FOLDER) + "/";
+
+			if (logger.isDebugEnabled()) {
+				logger.debug("Exploring folder " + folderAttrib);
+			}
 
 			IConfigurationElement[] currentPictures = currentFolder.getChildren(ITEM_PRELOADED_PICTURE);
 
@@ -88,8 +101,13 @@ public class PicturesRegistryService implements IPictureRegistryService {
 						suffix = "_" + i;
 					}
 
-					generateImage(pluginID, folderAttrib + pictureAdress + suffix + extension,
-							Boolean.parseBoolean(disabled));
+					String imageAdress = folderAttrib + pictureAdress + suffix + extension;
+
+					if (logger.isDebugEnabled()) {
+						logger.debug("Generating picture for " + imageAdress);
+					}
+
+					generateImage(pluginID, imageAdress, Boolean.parseBoolean(disabled));
 
 				}
 

@@ -49,6 +49,8 @@ import org.handrianj.corrie.editors.util.editors.ICorrieEditorInput;
 import org.handrianj.corrie.languagemanager.service.ILanguageManagerService;
 import org.handrianj.corrie.serviceregistry.ServiceRegistry;
 import org.handrianj.corrie.utilsui.TableBuilerHelper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Abstract UI class to edit an IUser. This class will provide a search bar as
@@ -67,6 +69,8 @@ public abstract class AbstractDataEditor extends AbstractCorrieEditor<List<ITabl
 	private ITableStructure currentTableSelected;
 	private ILanguageManagerService languageManagerService;
 	private String formatErrorMessage;
+
+	private Logger logger = LoggerFactory.getLogger(AbstractDataEditor.class);
 
 	public AbstractDataEditor() {
 	}
@@ -320,6 +324,10 @@ public abstract class AbstractDataEditor extends AbstractCorrieEditor<List<ITabl
 
 			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
+
+				if (logger.isDebugEnabled()) {
+					logger.debug("New Selection on the table");
+				}
 
 				IStructuredSelection selection = (IStructuredSelection) event.getSelection();
 

@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Loggers
+Bundle-SymbolicName: org.handrianj.corrie.loggers
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.handrianj.corrie.loggers.Activator
+Require-Bundle: org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: lib/slf4j-api-1.7.21.jar,
+ lib/slf4j-simple-1.7.21.jar,
+ .
+Export-Package: org.slf4j,
+ org.slf4j.event,
+ org.slf4j.helpers,
+ org.slf4j.impl,
+ org.slf4j.spi

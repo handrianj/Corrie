@@ -15,6 +15,8 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
 import org.handrianj.corrie.graphics.charts.IChart;
 import org.handrianj.corrie.graphics.charts.IChartItem;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Abstract that contains the composite and the canvas to draw the chart.
@@ -25,6 +27,8 @@ import org.handrianj.corrie.graphics.charts.IChartItem;
  * @param <I>
  */
 public abstract class AbstractChart<N extends Number, I extends IChartItem<N>> implements IChart<N, I> {
+
+	private static Logger logger = LoggerFactory.getLogger(AbstractChart.class);
 
 	private Canvas canvas;
 
@@ -79,6 +83,11 @@ public abstract class AbstractChart<N extends Number, I extends IChartItem<N>> i
 
 	@Override
 	public void setData(I data) {
+
+		if (logger.isDebugEnabled()) {
+			logger.debug("Updating data for graph " + data);
+		}
+
 		this.data = data;
 
 		Collection<String> rows = data.getRows();
@@ -116,6 +125,10 @@ public abstract class AbstractChart<N extends Number, I extends IChartItem<N>> i
 
 	@Override
 	public void showLegend(boolean show) {
+
+		if (logger.isDebugEnabled()) {
+			logger.debug("Updating legend visibility to " + Boolean.toString(show));
+		}
 		legendGridData.exclude = !show;
 		legendComposite.setVisible(show);
 		chartCompo.layout(true);

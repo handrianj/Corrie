@@ -27,6 +27,8 @@ import org.handrianj.corrie.hermes.datamodel.CellData;
 import org.handrianj.corrie.hermes.datamodel.ExcelDocument;
 import org.handrianj.corrie.hermes.datamodel.ExcelSheet;
 import org.handrianj.corrie.hermes.datamodel.IFormula;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Class used to read the excell file
@@ -36,6 +38,8 @@ import org.handrianj.corrie.hermes.datamodel.IFormula;
  */
 public class ExcelReader {
 
+	private static Logger logger = LoggerFactory.getLogger(ExcelReader.class);
+
 	private final static String XSLX = "XLSX";
 	private final static String XSL = "XLS";
 	private final static String CSV = "CSV";
@@ -43,6 +47,10 @@ public class ExcelReader {
 	public static ExcelDocument parseFile(String fileName) {
 		FileInputStream stream;
 		ExcelDocument doc = new ExcelDocument();
+
+		if (logger.isDebugEnabled()) {
+			logger.debug("Reading file " + fileName);
+		}
 
 		try {
 
@@ -67,7 +75,7 @@ public class ExcelReader {
 			}
 
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error(e.getMessage(), e);
 		}
 
 		return doc;
@@ -79,6 +87,10 @@ public class ExcelReader {
 		String line = "";
 		String cvsSplitBy = ",";
 		boolean init = true;
+
+		if (logger.isDebugEnabled()) {
+			logger.debug("Reading CSV file " + fileName);
+		}
 
 		String titles[] = new String[0];
 		ExcelSheet newSheet = new ExcelSheet();
@@ -112,14 +124,18 @@ public class ExcelReader {
 			doc.addPage(ExcelSheet.DEFAULT_NAME, newSheet);
 
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			logger.error(e.getMessage(), e);
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error(e.getMessage(), e);
 		}
 
 	}
 
 	private static void parseExcelFile(ExcelDocument doc, Workbook workbook) {
+
+		if (logger.isDebugEnabled()) {
+			logger.debug("Reading file Excell file ");
+		}
 
 		int numberOfSheets = workbook.getNumberOfSheets();
 

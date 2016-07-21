@@ -20,12 +20,16 @@ import org.handrianj.corrie.editors.util.editors.ICorrieEditorInput;
 import org.handrianj.corrie.editors.util.editors.IEditorPilotService;
 import org.handrianj.corrie.editors.util.factories.EditorInputFactory;
 import org.handrianj.corrie.editors.util.factories.IEditorInputFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author Heri Andrianjafy
  *
  */
 public class EditorPilotService implements IEditorPilotService {
+
+	private Logger logger = LoggerFactory.getLogger(EditorPilotService.class);
 
 	private Map<UISession, List<IEditorReference>> sessionToHiddenEditorsMap = new ConcurrentHashMap<>();
 
@@ -35,6 +39,10 @@ public class EditorPilotService implements IEditorPilotService {
 	public void openEditor(String editorID, Object inputObject, boolean closeOthers, boolean updateInput) {
 
 		if ((editorID == null) || editorID.isEmpty()) {
+
+			if (logger.isDebugEnabled()) {
+				logger.debug("Editor ID is null ");
+			}
 			return;
 		}
 		IEditorInputFactory<?> factory = EditorInputFactory.getFactory(editorID);
@@ -72,13 +80,18 @@ public class EditorPilotService implements IEditorPilotService {
 			}
 
 		} catch (PartInitException e) {
-			e.printStackTrace();
+			logger.error(e.getMessage(), e);
 		}
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public void updateEditorInput(String editorID, ICorrieEditorInput input) {
+
+		if (logger.isDebugEnabled()) {
+			logger.debug("Updating input for " + editorID + " with " + input.getData());
+		}
+
 		IWorkbenchPage activePage = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 		IEditorReference[] lastEditor = activePage.findEditors(null, editorID, org.eclipse.ui.IWorkbenchPage.MATCH_ID);
 
@@ -90,6 +103,11 @@ public class EditorPilotService implements IEditorPilotService {
 
 	@Override
 	public void openPerspective(String perspectiveID) {
+
+		if (logger.isDebugEnabled()) {
+			logger.debug("Opening perspective " + perspectiveID);
+		}
+
 		// Open the perspective
 		IWorkbench workbench = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getWorkbench();
 		IPerspectiveRegistry reg = workbench.getPerspectiveRegistry();
@@ -103,6 +121,10 @@ public class EditorPilotService implements IEditorPilotService {
 
 	@Override
 	public synchronized void closeEditor(String editorID) {
+
+		if (logger.isDebugEnabled()) {
+			logger.debug("Closing editor " + editorID);
+		}
 
 		IWorkbenchPage activePage = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 
@@ -118,6 +140,11 @@ public class EditorPilotService implements IEditorPilotService {
 
 	@Override
 	public synchronized void hideEditor(UISession session, IEditorReference reference) {
+
+		if (logger.isDebugEnabled()) {
+			logger.debug("Hiding the editor " + reference.getId());
+		}
+
 		IWorkbenchPage activePage = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 		activePage.hideEditor(reference);
 
@@ -135,6 +162,11 @@ public class EditorPilotService implements IEditorPilotService {
 
 	@Override
 	public synchronized void showEditor(UISession session, String editorId) {
+
+		if (logger.isDebugEnabled()) {
+			logger.debug("Showing the editor " + editorId);
+		}
+
 		IWorkbenchPage activePage = sessionToPageMap.get(session);
 
 		List<IEditorReference> refList = sessionToHiddenEditorsMap.get(RWT.getUISession());
@@ -171,6 +203,10 @@ public class EditorPilotService implements IEditorPilotService {
 
 	@Override
 	public void closeSession(UISession session) {
+
+		if (logger.isDebugEnabled()) {
+			logger.debug("Closing session" + session);
+		}
 
 		List<IEditorReference> allEditors = sessionToHiddenEditorsMap.get(session);
 		IWorkbenchPage page = sessionToPageMap.get(session);

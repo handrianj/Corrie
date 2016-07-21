@@ -7,7 +7,8 @@ Bundle-Activator: org.handrianj.corrie.viewsmanager.Activator
 Bundle-Vendor: CAPSA
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.rap.ui.workbench,
- org.eclipse.rap.ui
+ org.eclipse.rap.ui,
+ org.handrianj.corrie.loggers;visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.handrianj.corrie.viewsmanager;uses:="org.osgi.framework,org.eclipse.ui.plugin",

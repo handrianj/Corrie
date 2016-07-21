@@ -11,6 +11,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.handrianj.corrie.viewsmanager;visibility:=reexport,
  org.handrianj.corrie.languageManager;visibility:=reexport,
  org.handrianj.corrie.sessionmanager;visibility:=reexport,
+ org.handrianj.corrie.loggers;visibility:=reexport,
  org.handrianj.corrie.dblink,
  org.handrianj.corrie.dblink.impl
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

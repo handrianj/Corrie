@@ -8,8 +8,12 @@ import org.handrianj.corrie.dblink.Activator;
 import org.handrianj.corrie.sessionmanager.service.ISessionManager;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public abstract class AbstractDBSessionService<U extends IUser> implements IDBSessionService<U> {
+
+	private static Logger logger = LoggerFactory.getLogger(AbstractDBSessionService.class);
 
 	private Map<U, IDAOProvider> userToSession = new ConcurrentHashMap<>();
 	private IDAOProvider defaultService;
@@ -23,14 +27,26 @@ public abstract class AbstractDBSessionService<U extends IUser> implements IDBSe
 		if (user != null) {
 			if (userToSession.containsKey(user)) {
 
+				if (logger.isDebugEnabled()) {
+					logger.debug("Retrieving the service for " + user.getUserId());
+				}
+
 				service = userToSession.get(user);
 			} else {
+
+				if (logger.isDebugEnabled()) {
+					logger.debug("Creating the service for " + user.getUserId());
+				}
 
 				service = createNewService(user);
 				userToSession.put(user, service);
 			}
 		} else {
 			if (defaultService == null) {
+				if (logger.isDebugEnabled()) {
+					logger.debug("Creating the default service");
+				}
+
 				defaultService = createNewService(null);
 			}
 
@@ -60,8 +76,16 @@ public abstract class AbstractDBSessionService<U extends IUser> implements IDBSe
 
 	@Override
 	public void closeDBsession(U user) {
+
+		if (logger.isDebugEnabled()) {
+			logger.debug("Closing DB session for " + user.getUserId());
+		}
+
 		IDAOProvider service = userToSession.get(user);
-		service.closeSession();
+
+		if (service != null) {
+			service.closeSession();
+		}
 		userToSession.remove(user);
 	}
 

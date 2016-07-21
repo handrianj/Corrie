@@ -9,6 +9,8 @@ import org.eclipse.core.runtime.IExtension;
 import org.eclipse.core.runtime.IExtensionPoint;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Factory used to dynamically read and load the differents editors inputs
@@ -17,6 +19,8 @@ import org.eclipse.core.runtime.Platform;
  *
  */
 public class EditorInputFactory {
+
+	private static Logger logger = LoggerFactory.getLogger(EditorInputFactory.class);
 
 	private static Map<String, IEditorInputFactory<?>> idToFacto = new HashMap<>();
 
@@ -47,8 +51,7 @@ public class EditorInputFactory {
 
 						idToFacto.put(attributeID, factoryClass);
 					} catch (CoreException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
+						logger.error(e1.getMessage(), e1);
 					}
 
 				}

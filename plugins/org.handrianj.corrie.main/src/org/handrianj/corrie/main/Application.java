@@ -22,6 +22,8 @@ import org.handrianj.corrie.sessionmanager.service.ISessionManager;
 import org.handrianj.corrie.utilsui.dialog.ui.LogInDialog;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class controls all aspects of the application's execution and is
@@ -29,11 +31,14 @@ import org.osgi.framework.ServiceReference;
  */
 public class Application implements IApplication {
 
+	private static Logger logger = LoggerFactory.getLogger(Application.class);
+
 	private IDBSessionService<IUser> dbservice;
 
 	@Override
 	public Object start(IApplicationContext context) throws Exception {
 		Display display = PlatformUI.createDisplay();
+
 		WorkbenchAdvisor advisor = new ApplicationWorkbenchAdvisor();
 
 		dbservice = ServiceRegistry.getDbservice();
@@ -80,11 +85,15 @@ public class Application implements IApplication {
 				// If someone was already connected unconnect
 				if (sessionManager.isUserOnline(activeUser)) {
 
+					logger.info("User {} already online", activeUser.getUserId());
+
 					// Open confirmation message
 					if (MessageDialog.openQuestion(display.getActiveShell(),
 							languageService.getMessage(Activator.PLUGIN_ID, IMainLang.LOGIN_ERROR_ALREADY_1, uiSession),
 							languageService.getMessage(Activator.PLUGIN_ID, IMainLang.LOGIN_ERROR_ALREADY_2,
 									uiSession))) {
+
+						logger.info("Disconecting {}", activeUser.getUserId());
 
 						sessionManager.logoutUser(activeUser);
 
@@ -100,6 +109,7 @@ public class Application implements IApplication {
 				return loginUser(display, languageService, service, advisor, activeUser, sessionManager,
 						currentUISession);
 			} else if ((activeUser != null) && (activeUser.isActive())) {
+
 				MessageDialog.openWarning(display.getActiveShell(),
 						languageService.getMessage(Activator.PLUGIN_ID, "LoginDialog_5", uiSession),
 						languageService.getMessage(Activator.PLUGIN_ID, "LoginDialog_10", uiSession));

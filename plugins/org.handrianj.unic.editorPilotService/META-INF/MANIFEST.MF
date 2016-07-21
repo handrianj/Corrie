@@ -8,7 +8,8 @@ Bundle-Vendor: CAPSA
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.rap.ui.workbench,
  org.eclipse.rap.ui,
- org.handrianj.corrie.editors.util
+ org.handrianj.corrie.editors.util,
+ org.handrianj.corrie.loggers;visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.handrianj.corrie.editorpilotservice.impl

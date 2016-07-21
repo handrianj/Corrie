@@ -9,7 +9,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.rap.ui.workbench,
  org.eclipse.rap.rwt,
  org.eclipse.rap.chartjs;visibility:=reexport,
- org.eclipse.rap.jface
+ org.eclipse.rap.jface,
+ org.handrianj.corrie.loggers;visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.handrianj.corrie.graphics.charts,

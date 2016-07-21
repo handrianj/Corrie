@@ -11,3 +11,6 @@ Bundle-ActivationPolicy: lazy
 Export-Package: org.handrianj.corrie.datamodel.entities,
  org.handrianj.corrie.datamodel.structure,
  org.handrianj.corrie.datamodel.structure.impl
+Bundle-ClassPath: lib/slf4j-jdk14-1.7.21.jar,
+ lib/slf4j-api-1.7.21.jar,
+ .
