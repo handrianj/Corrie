@@ -22,7 +22,7 @@ public final class ViewsExtensionReader {
 
 	private static Logger logger = LoggerFactory.getLogger(ViewsExtensionReader.class);
 
-	private static final String EXTENSION_POINT = "org.handrianj.corrie.viewsManager.capsaView";
+	private static final String EXTENSION_POINT = "org.handrianj.corrie.viewsManager.view";
 
 	private static final String ATTRIB_ID = "ViewID";
 
