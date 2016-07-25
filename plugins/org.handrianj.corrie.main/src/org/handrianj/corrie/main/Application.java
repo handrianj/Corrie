@@ -95,9 +95,9 @@ public class Application implements IApplication {
 
 						logger.info("Disconecting {}", activeUser.getUserId());
 
-						sessionManager.logoutUser(activeUser);
-
 						dbservice.closeDBsession(activeUser);
+
+						sessionManager.logoutUser(activeUser);
 
 						return loginUser(display, languageService, service, advisor, activeUser, sessionManager,
 								currentUISession);
