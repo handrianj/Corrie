@@ -91,8 +91,11 @@ public class LanguageManagerServiceImpl implements ILanguageManagerService {
 
 	@Override
 	public void init() {
+
+		logger.info("Initialization of the Language Service");
 		IExtensionRegistry registry = Platform.getExtensionRegistry();
 		readLanguageTypes(registry);
+
 		// Read the defaults first
 		readLanguageFiles(registry, EXTENSION_POINT_LANGUAGE_DEFAULTS);
 
