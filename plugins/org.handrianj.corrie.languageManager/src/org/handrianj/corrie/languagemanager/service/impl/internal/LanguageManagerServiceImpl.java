@@ -102,6 +102,7 @@ public class LanguageManagerServiceImpl implements ILanguageManagerService {
 	}
 
 	private void readLanguageTypes(IExtensionRegistry registry) {
+
 		IExtensionPoint point = registry.getExtensionPoint(EXTENSION_POINT_LANGUAGES);
 		if (point != null) {
 
@@ -128,6 +129,8 @@ public class LanguageManagerServiceImpl implements ILanguageManagerService {
 				}
 			}
 		}
+
+		logger.info("Extension point {} found {} languagues", EXTENSION_POINT_LANGUAGES, allLanguages.size());
 
 	}
 
