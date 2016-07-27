@@ -96,6 +96,7 @@ public class ServiceRegistry {
 				}
 
 				languageManagerService = (ILanguageManagerService) bundleContext.getService(serviceReference);
+				languageManagerService.init();
 			} else {
 				logger.warn("ILanguageManagerService cannot be initialized");
 			}
@@ -119,6 +120,7 @@ public class ServiceRegistry {
 				}
 
 				pictureRegistryService = (IPictureRegistryService) bundleContext.getService(serviceReference);
+				pictureRegistryService.preloadPictures();
 			} else {
 				logger.warn("IPictureRegistryService cannot be initialized");
 			}

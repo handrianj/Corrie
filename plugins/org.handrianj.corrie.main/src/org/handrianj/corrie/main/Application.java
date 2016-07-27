@@ -43,9 +43,6 @@ public class Application implements IApplication {
 
 		dbservice = ServiceRegistry.getDbservice();
 
-		// Preload pictures here since pictures service need a context
-		ServiceRegistry.getPictureRegistryService().preloadPictures();
-
 		ServiceManager manager = RWT.getServiceManager();
 		try {
 			manager.registerServiceHandler("downloadServiceHandler", new DownloadServiceHandler());

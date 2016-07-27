@@ -6,10 +6,7 @@ import org.handrianj.corrie.applicationmanagerservice.IApplicationManagerService
 import org.handrianj.corrie.editors.util.factories.EditorInputFactory;
 import org.handrianj.corrie.main.internal.CorrieApplicationManagerServiceImpl;
 import org.handrianj.corrie.main.internal.ExtensionReader;
-import org.handrianj.corrie.serviceregistry.ServiceRegistry;
 import org.osgi.framework.BundleContext;
-
-import org.handrianj.corrie.viewsmanager.ViewsExtensionReader;
 
 /**
  * The activator class controls the plug-in life cycle
@@ -43,9 +40,6 @@ public class Activator extends AbstractUIPlugin {
 		CorrieApplicationManagerServiceImpl applicationManagerService = new CorrieApplicationManagerServiceImpl();
 		applicationManagerService.init();
 		context.registerService(IApplicationManagerService.class, applicationManagerService, null);
-
-		ServiceRegistry.getLanguageManagerService().init();
-		ViewsExtensionReader.readExtensionPoint();
 
 	}
 
