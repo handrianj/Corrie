@@ -7,4 +7,4 @@ The org.handrianj.hermes plugin requires Apache POI available here : https://poi
 
 Framework documentation is located here : https://github.com/handrianj/Corrie/wiki
 
-This project is licenced under GNU GPL 3. 
+This project is licenced under Eclipse Public License. 
