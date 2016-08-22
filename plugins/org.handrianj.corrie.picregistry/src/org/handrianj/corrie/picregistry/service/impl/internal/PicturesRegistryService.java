@@ -16,7 +16,6 @@ import org.eclipse.swt.widgets.Display;
 import org.handrianj.corrie.picregistry.Activator;
 import org.handrianj.corrie.picregistry.service.IPictureRegistryService;
 import org.handrianj.corrie.ressourcegc.AbstractRessourceGC;
-import org.handrianj.corrie.ressourcegc.GCRessource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -45,7 +44,7 @@ public class PicturesRegistryService extends AbstractRessourceGC<String> impleme
 	private Map<String, Image> registry;
 
 	public PicturesRegistryService() {
-		super("Picture management", DEFAULT_CHECK_DELAY);
+		super("Picture management");
 	}
 
 	@Override
@@ -142,14 +141,14 @@ public class PicturesRegistryService extends AbstractRessourceGC<String> impleme
 
 				registry.put(key, image);
 
-				addRessource(new GCRessource<String>(key));
+				addRessource(key);
 
 				if (generateDisabled) {
 					key += IPictureRegistryService.DISABLED_PICTURES_ID;
 
 					Image img = new Image(Display.getDefault(), image, SWT.IMAGE_DISABLE);
 					registry.put(key, img);
-					addRessource(new GCRessource<String>(key));
+					addRessource(key);
 				}
 			}
 			// Else something bad happened, try load the error picture
@@ -159,6 +158,10 @@ public class PicturesRegistryService extends AbstractRessourceGC<String> impleme
 				image = registry.get(Activator.PLUGIN_ID + NO_PICTURE_KEY);
 
 			}
+		} else {
+
+			updateTimestampForRessource(key);
+
 		}
 
 		return image;
@@ -188,6 +191,9 @@ public class PicturesRegistryService extends AbstractRessourceGC<String> impleme
 
 			// We call generate in order to make sure
 			image = registry.get(Activator.PLUGIN_ID + NO_PICTURE_KEY);
+		} else {
+
+			updateTimestampForRessource(getKey(pluginID, imageAdress, isEnabled));
 		}
 
 		return image;
@@ -205,11 +211,10 @@ public class PicturesRegistryService extends AbstractRessourceGC<String> impleme
 	}
 
 	@Override
-	protected void clearRessource(GCRessource<String> ressource) {
-		Image image = registry.get(ressource.getObject());
+	protected void clearRessource(String key) {
+		Image image = registry.get(key);
 
-		registry.remove(ressource.getObject());
+		registry.remove(key);
 		image.dispose();
 	}
-
 }

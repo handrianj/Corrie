@@ -14,7 +14,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.handrianj.corrie.dblink,
  org.handrianj.corrie.applicationManagerService,
  org.handrianj.corrie.datamodel,
- org.handrianj.corrie.loggers;visibility:=reexport
+ org.handrianj.corrie.loggers;visibility:=reexport,
+ org.handrianj.corrie.colorRegistry
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.handrianj.corrie.serviceregistry

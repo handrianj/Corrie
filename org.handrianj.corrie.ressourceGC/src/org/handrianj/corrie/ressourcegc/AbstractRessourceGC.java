@@ -10,15 +10,7 @@ import org.eclipse.core.runtime.jobs.Job;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Abstract class for Ressource GC Services. This class will act like a garbage
- * collector. It will regularly check the ressource register to dispose unused
- * ressources after a certain amount of time in order to save memory.
- *
- * @author Heri Andrianjafy
- *
- */
-public abstract class AbstractRessourceGC<N extends Object> {
+public abstract class AbstractRessourceGC<N extends Comparable<N>> implements IRessourceGC<N> {
 
 	private static Logger logger = LoggerFactory.getLogger(AbstractRessourceGC.class);
 
@@ -31,7 +23,14 @@ public abstract class AbstractRessourceGC<N extends Object> {
 
 	private Job job;
 
+	private Long checkDelay = DEFAULT_CHECK_DELAY;
+
+	public AbstractRessourceGC(String jobName) {
+		this(jobName, DEFAULT_CHECK_DELAY);
+	}
+
 	public AbstractRessourceGC(String jobName, long checkDelay) {
+		this.checkDelay = checkDelay;
 
 		job = new Job(jobName) {
 
@@ -48,12 +47,12 @@ public abstract class AbstractRessourceGC<N extends Object> {
 
 					long elapsedTime = currentTimeMillis - r.getLastUsedTime();
 
-					int compare = Long.compare(elapsedTime, checkDelay);
+					int compare = Long.compare(elapsedTime, getCheckDelay());
 
 					if (compare > 0) {
 
 						logger.info("Deleting ressource " + r);
-						clearRessource(r);
+						clearRessource(r.getKey());
 						itemsToRemove.add(r);
 					}
 				}
@@ -70,14 +69,46 @@ public abstract class AbstractRessourceGC<N extends Object> {
 
 	}
 
+	@Override
+	public Long getCheckDelay() {
+		return checkDelay;
+	}
+
 	/**
 	 * Adds a ressource to the list
 	 *
 	 * @param ressource
 	 */
-	protected void addRessource(GCRessource<N> ressource) {
+	@Override
+	public void addRessource(N key) {
 
-		ressourceList.add(ressource);
+		ressourceList.add(new GCRessource<N>(key));
+
+	}
+
+	protected CopyOnWriteArrayList<GCRessource<N>> getRessourceList() {
+		return ressourceList;
+	}
+
+	/**
+	 * Updates the timestamp usage of a ressource
+	 *
+	 * @param key
+	 */
+	@Override
+	public void updateTimestampForRessource(N key) {
+		for (GCRessource<N> ressource : getRessourceList()) {
+			if (ressource.getKey().compareTo(key) == 0) {
+				ressource.updateRessourceTime();
+				break;
+			}
+		}
+
+	}
+
+	@Override
+	public void updateChechDelay(long newCheckDelay) {
+		checkDelay = newCheckDelay;
 
 	}
 
@@ -85,8 +116,9 @@ public abstract class AbstractRessourceGC<N extends Object> {
 	 * Clears the ressource in the Java memory and performs post cleaning
 	 * actions
 	 *
-	 * @param ressource
+	 * @param key
+	 *            Key of the ressource to be deleted
 	 */
-	protected abstract void clearRessource(GCRessource<N> ressource);
+	protected abstract void clearRessource(N key);
 
 }

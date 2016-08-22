@@ -4,8 +4,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import org.eclipse.swt.graphics.Color;
-import org.eclipse.swt.widgets.Display;
+import org.handrianj.corrie.colorregistry.service.IColorRegistry;
 import org.handrianj.corrie.graphics.charts.IChartItem;
+import org.handrianj.corrie.serviceregistry.ServiceRegistry;
 
 /**
  * Abstract implementation of chart item for color management
@@ -17,6 +18,8 @@ import org.handrianj.corrie.graphics.charts.IChartItem;
 public abstract class AbstractChartItem<T extends Number> implements IChartItem<T> {
 
 	private Map<String, Color> itemsToColor = new LinkedHashMap<>();
+
+	private IColorRegistry registry = ServiceRegistry.getColorRegistry();
 
 	@Override
 	public boolean isFormatOk(Class<? extends Number> clazzToCheck) {
@@ -34,8 +37,8 @@ public abstract class AbstractChartItem<T extends Number> implements IChartItem<
 		Color color = itemsToColor.get(name);
 
 		if (color == null) {
-			color = new Color(Display.getDefault(), (int) (Math.random() * 255), (int) (Math.random() * 255),
-					(int) (Math.random() * 255), 124);
+			color = registry.getColor((int) (Math.random() * 255), (int) (Math.random() * 255),
+					(int) (Math.random() * 255));
 
 			itemsToColor.put(name, color);
 		}
@@ -49,7 +52,7 @@ public abstract class AbstractChartItem<T extends Number> implements IChartItem<
 
 	@Override
 	public void setColor(String name, int r, int g, int b, int a) {
-		itemsToColor.put(name, new Color(Display.getCurrent(), r, g, b, a));
+		itemsToColor.put(name, registry.getColor(r, g, b, a));
 
 	}
 

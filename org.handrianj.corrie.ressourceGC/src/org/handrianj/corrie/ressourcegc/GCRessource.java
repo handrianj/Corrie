@@ -24,7 +24,7 @@ public class GCRessource<O extends Object> {
 	 *
 	 * @return
 	 */
-	public O getObject() {
+	public O getKey() {
 
 		return object;
 	}

@@ -1,6 +1,7 @@
 package org.handrianj.corrie.picregistry.service;
 
 import org.eclipse.swt.graphics.Image;
+import org.handrianj.corrie.ressourcegc.IRessourceGC;
 
 /**
  * Service used for the picture registry, use it when it comes to using pictures
@@ -10,7 +11,7 @@ import org.eclipse.swt.graphics.Image;
  * @author Heri Andrianjafy
  *
  */
-public interface IPictureRegistryService {
+public interface IPictureRegistryService extends IRessourceGC<String> {
 
 	/**
 	 * ID used to define the disabled pictures

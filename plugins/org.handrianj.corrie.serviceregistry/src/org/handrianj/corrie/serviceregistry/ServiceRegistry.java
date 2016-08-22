@@ -2,6 +2,7 @@ package org.handrianj.corrie.serviceregistry;
 
 import org.eclipse.rap.rwt.service.UISession;
 import org.handrianj.corrie.applicationmanagerservice.IApplicationManagerService;
+import org.handrianj.corrie.colorregistry.service.IColorRegistry;
 import org.handrianj.corrie.datamodel.entities.IUser;
 import org.handrianj.corrie.dblink.services.IConstantService;
 import org.handrianj.corrie.dblink.services.IDAOProvider;
@@ -28,6 +29,30 @@ public class ServiceRegistry {
 	private static IConstantService<?, ?> constantService;
 	private static IApplicationManagerService applicationService;
 	private static IFileDownloadService fileRegistry;
+	private static IColorRegistry colorRegistry;
+
+	public static IColorRegistry getColorRegistry() {
+
+		if (logger.isDebugEnabled()) {
+			logger.debug("Initializing the ColorRegistry");
+		}
+		BundleContext bundleContext = Activator.getDefault().getBundle().getBundleContext();
+		ServiceReference<?> serviceReference = bundleContext.getServiceReference(IColorRegistry.class);
+		if (serviceReference != null) {
+
+			if (logger.isDebugEnabled()) {
+				logger.debug("ColorRegistry initialized");
+			}
+
+			colorRegistry = (IColorRegistry) bundleContext.getService(serviceReference);
+
+		} else {
+			logger.warn("ColorRegistry cannot be initialized");
+		}
+
+		return colorRegistry;
+
+	}
 
 	@SuppressWarnings("unchecked")
 	public static IDBSessionService<IUser> getDbservice() {
