@@ -15,10 +15,12 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 import org.handrianj.corrie.picregistry.Activator;
 import org.handrianj.corrie.picregistry.service.IPictureRegistryService;
+import org.handrianj.corrie.ressourcegc.AbstractRessourceGC;
+import org.handrianj.corrie.ressourcegc.GCRessource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class PicturesRegistryService implements IPictureRegistryService {
+public class PicturesRegistryService extends AbstractRessourceGC<String> implements IPictureRegistryService {
 
 	private static Logger logger = LoggerFactory.getLogger(PicturesRegistryService.class);
 
@@ -41,6 +43,10 @@ public class PicturesRegistryService implements IPictureRegistryService {
 	private static final String ITEM_PRELOADED_PICTURE = "PreloadedPicture";
 
 	private Map<String, Image> registry;
+
+	public PicturesRegistryService() {
+		super("Picture management", DEFAULT_CHECK_DELAY);
+	}
 
 	@Override
 	public void preloadPictures() {
@@ -136,11 +142,14 @@ public class PicturesRegistryService implements IPictureRegistryService {
 
 				registry.put(key, image);
 
+				addRessource(new GCRessource<String>(key));
+
 				if (generateDisabled) {
 					key += IPictureRegistryService.DISABLED_PICTURES_ID;
 
 					Image img = new Image(Display.getDefault(), image, SWT.IMAGE_DISABLE);
 					registry.put(key, img);
+					addRessource(new GCRessource<String>(key));
 				}
 			}
 			// Else something bad happened, try load the error picture
@@ -193,6 +202,14 @@ public class PicturesRegistryService implements IPictureRegistryService {
 		}
 		registry.clear();
 		registry = null;
+	}
+
+	@Override
+	protected void clearRessource(GCRessource<String> ressource) {
+		Image image = registry.get(ressource.getObject());
+
+		registry.remove(ressource.getObject());
+		image.dispose();
 	}
 
 }

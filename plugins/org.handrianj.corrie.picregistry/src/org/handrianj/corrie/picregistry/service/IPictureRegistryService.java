@@ -4,7 +4,8 @@ import org.eclipse.swt.graphics.Image;
 
 /**
  * Service used for the picture registry, use it when it comes to using pictures
- * in order to save JAVA MEMORY
+ * in order to save JAVA MEMORY. Unused pictures for a long time will be
+ * automatically disposed
  *
  * @author Heri Andrianjafy
  *
