@@ -89,10 +89,7 @@ public class ChartsDrawer {
 			} else {
 				throw new IllegalArgumentException("Chart item must be " + ISingleValueItem.class.getCanonicalName());
 			}
-			// } else {
-			// throw new IllegalArgumentException("Format of numbrs must be " +
-			// Float.class.getCanonicalName());
-			// }
+
 		} else {
 
 			@SuppressWarnings("rawtypes")

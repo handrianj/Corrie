@@ -5,14 +5,16 @@ import org.eclipse.rap.chartjs.ChartOptions;
 import org.eclipse.rap.chartjs.ChartPointData;
 import org.eclipse.rap.chartjs.ChartRowData;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.PaintEvent;
 import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.widgets.Canvas;
 import org.eclipse.swt.widgets.Composite;
-import org.handrianj.corrie.graphics.charts.IChart;
 import org.handrianj.corrie.graphics.charts.IChartItem;
+import org.handrianj.corrie.graphics.charts.impl.AbstractChart;
 import org.handrianj.corrie.graphics.charts.impl.CorrieChartOptions;
 import org.handrianj.corrie.graphics.generator.ChartsDrawer;
 
-public class ChartJSEmbedded<N extends Number, I extends IChartItem<N>> implements IChart<N, I> {
+public class ChartJSEmbedded<N extends Number, I extends IChartItem<N>> extends AbstractChart<N, I> {
 
 	private Chart chart;
 	private int chartType;
@@ -20,8 +22,7 @@ public class ChartJSEmbedded<N extends Number, I extends IChartItem<N>> implemen
 	private ChartOptions options;
 
 	public ChartJSEmbedded(Composite parent, int chartType, CorrieChartOptions options) {
-		chart = new Chart(parent, SWT.NONE);
-		chart.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+		super(parent, SWT.NONE, options);
 		this.chartType = chartType;
 		this.options = options;
 	}
@@ -40,6 +41,7 @@ public class ChartJSEmbedded<N extends Number, I extends IChartItem<N>> implemen
 	@SuppressWarnings("unchecked")
 	@Override
 	public void setData(I chartItem) {
+		super.setData(chartItem);
 		switch (chartType) {
 		case ChartsDrawer.FUNNEL_CHART:
 
@@ -131,7 +133,21 @@ public class ChartJSEmbedded<N extends Number, I extends IChartItem<N>> implemen
 
 	@Override
 	public void showLegend(boolean show) {
-		options.setShowToolTips(false);
+		super.showLegend(show);
+		options.setShowToolTips(show);
+	}
+
+	@Override
+	protected void paintEventHandler(PaintEvent event) {
+		// Nothing to do
+
+	}
+
+	@Override
+	protected void addCompositeToCanvas(Canvas canvas) {
+		chart = new Chart(canvas, SWT.NONE);
+		chart.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+
 	}
 
 }
