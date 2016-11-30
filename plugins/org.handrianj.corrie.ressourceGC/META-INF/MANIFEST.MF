@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: RessourceGC
-Bundle-SymbolicName: org.handrianj.corrie.ressourceGC
+Bundle-SymbolicName: org.handrianj.corrie.ressourceGC;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.handrianj.corrie.ressourcegc.Activator
 Require-Bundle: org.eclipse.core.runtime,

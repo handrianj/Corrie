@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Serviceregistry
-Bundle-SymbolicName: org.handrianj.corrie.serviceregistry
+Bundle-SymbolicName: org.handrianj.corrie.serviceregistry;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.handrianj.corrie.serviceregistry.Activator
 Bundle-Vendor: CAPSA
