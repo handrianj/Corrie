@@ -256,14 +256,4 @@ public class ServiceRegistry {
 		return applicationService;
 	}
 
-	static void clearData() {
-		pictureRegistryService = null;
-		languageManagerService = null;
-		dbservice = null;
-		pilotService = null;
-		sessionManager = null;
-		constantService = null;
-		applicationService = null;
-	}
-
 }
