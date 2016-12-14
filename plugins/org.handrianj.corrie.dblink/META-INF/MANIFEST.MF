@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Dblink
-Bundle-SymbolicName: org.handrianj.corrie.dblink
+Bundle-SymbolicName: org.handrianj.corrie.dblink;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.handrianj.corrie.dblink.Activator
 Bundle-Vendor: CAPSA

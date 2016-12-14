@@ -124,7 +124,7 @@ public class PicturesRegistryService extends AbstractRessourceGC<String> impleme
 	}
 
 	@Override
-	public Image generateImage(String pluginID, String imageAdress, boolean generateDisabled) {
+	public void generateImage(String pluginID, String imageAdress, boolean generateDisabled) {
 
 		String key = pluginID + imageAdress;
 
@@ -163,8 +163,6 @@ public class PicturesRegistryService extends AbstractRessourceGC<String> impleme
 			updateTimestampForRessource(key);
 
 		}
-
-		return image;
 	}
 
 	@Override
@@ -184,13 +182,17 @@ public class PicturesRegistryService extends AbstractRessourceGC<String> impleme
 
 	@Override
 	public Image getImage(String pluginID, String imageAdress, boolean isEnabled) {
-		Image image = registry.get(getKey(pluginID, imageAdress, isEnabled));
+		String key = getKey(pluginID, imageAdress, isEnabled);
+		Image image = registry.get(key);
 
 		// If picture is null then return the default picture
 		if (image == null) {
 
+			logger.info("Image for " + key + " not found ! using no picture key");
+
 			// We call generate in order to make sure
 			image = registry.get(Activator.PLUGIN_ID + NO_PICTURE_KEY);
+
 		} else {
 
 			updateTimestampForRessource(getKey(pluginID, imageAdress, isEnabled));

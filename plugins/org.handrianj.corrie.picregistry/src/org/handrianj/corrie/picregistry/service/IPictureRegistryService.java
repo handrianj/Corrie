@@ -19,7 +19,8 @@ public interface IPictureRegistryService extends IRessourceGC<String> {
 	public static String DISABLED_PICTURES_ID = "disabledPicture";
 
 	/**
-	 * Generates and returns an image for use
+	 * Generates an image for use in the register for use. You must generate the
+	 * picture before using it otherwise you will have a blank picture
 	 *
 	 * @param pluginID
 	 *            ID of the plugin Calling the service
@@ -27,9 +28,8 @@ public interface IPictureRegistryService extends IRessourceGC<String> {
 	 *            Path of the picture inside the original plugin
 	 * @param generateDisabled
 	 *            TRUE if you want to generate disabled picture, FALSE otherwise
-	 * @return a SWT Image to be used
 	 */
-	Image generateImage(String pluginID, String imageAdress, boolean generateDisabled);
+	void generateImage(String pluginID, String imageAdress, boolean generateDisabled);
 
 	/**
 	 * Generates the key to find the picture using multiple datas
