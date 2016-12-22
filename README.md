@@ -9,4 +9,7 @@ Framework documentation is located here : https://github.com/handrianj/Corrie/wi
 
 The objective of this framework is to give you tools to easily create and modify web applications UI. The full framework abilities are listed here https://github.com/handrianj/Corrie/wiki#framework-features
 
+#Demo
+An example on how to use the framework is provided on this repository : https://github.com/handrianj/Corrie-demo
+
 This project is licenced under Eclipse Public License. 
